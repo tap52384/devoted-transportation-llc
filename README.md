@@ -37,9 +37,9 @@ tap52384:devoted
 echo "DOCUMENTROOT=/public/" > ~/code/devoted-transportation-llc/.env
 
 # Install Composer & the installer for Laravel
-docker exec -it devoted bash -c "curl -sS https://getcomposer.org/installer | php && php composer.phar global require laravel/installer"
-# Add Composer to $PATH and install Laravel
-docker exec -it devoted bash -c "export PATH=$PATH:/opt/app-root/src/.composer/vendor/bin && laravel new . && composer install && php artisan key:generate"
+docker exec -it devoted bash -c 'curl -sS https://getcomposer.org/installer | php && php composer.phar global require laravel/installer && laravel new .';
+# Install NPM, loads NPM, and Composer NPM packages
+docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.bash_profile && command -v nvm && echo $NVM_DIR && $NVM_DIR/nvm.sh && nvm --version && nvm install 8.17.0 && npm -v && npm install && npm run dev'
 ```
 
 ## Available Services + Laravel 6.x
