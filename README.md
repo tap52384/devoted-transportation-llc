@@ -14,6 +14,7 @@ git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 touch ~/code/devoted-transportation-llc/.env
 s2i build \
 -e DOCUMENTROOT=/public/ \
+--environment-file ~/code/devoted-transportation-llc/.env \
 ~/code/devoted-transportation-llc/ \
 tap52384:ubi8-php-73 \
 tap52384:devoted
