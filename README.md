@@ -21,6 +21,7 @@ tap52384:devoted
 
 # Stop and delete any containers based on the RedHat image
 docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/php-73 --format="{{.ID}}") || true
+docker rm -f devoted
 
 # Create the container "devoted" with the code folder mounted
 docker run \
