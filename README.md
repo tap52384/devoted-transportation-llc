@@ -25,6 +25,7 @@ docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/p
 # Create the container "devoted" with the code folder mounted
 docker run \
 --name devoted \
+--env-file ~/code/devoted-transportation-llc/.env \
 -e USER=$(whoami) \
 --hostname $(hostname) \
 -d \
