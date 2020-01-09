@@ -22,7 +22,7 @@ tap52384:devoted
 # Stop and delete any containers based on the RedHat image
 docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/php-73 --format="{{.ID}}") || true
 
-# Create the container "towing" with the code folder mounted
+# Create the container "devoted" with the code folder mounted
 docker run \
 --name devoted \
 -e USER=$(whoami) \
@@ -34,7 +34,7 @@ docker run \
 tap52384:devoted
 ```
 
-## Available Towing Services + Laravel 6.x
+## Available Services + Laravel 6.x
 
 The list of services provided are in an array in the `AppServiceProvider` class.
 This allows the data to be shared with all views and updated everywhere on the
