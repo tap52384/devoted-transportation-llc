@@ -11,7 +11,12 @@ docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8
 # Next, "re-build" the app using s2i (source-to-image)
 # Specify the /public/ folder as the Apache documentroot as needed for Laravel
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
-s2i build -e DOCUMENTROOT=/public/ ~/code/devoted-transportation-llc/ tap52384:ubi8-php-73 tap52384:devoted
+touch ~/code/devoted-transportation-llc/.env
+s2i build \
+-e DOCUMENTROOT=/public/ \
+~/code/devoted-transportation-llc/ \
+tap52384:ubi8-php-73 \
+tap52384:devoted
 
 # Stop and delete any containers based on the RedHat image
 docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/php-73 --format="{{.ID}}") || true
