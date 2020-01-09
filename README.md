@@ -13,7 +13,6 @@ docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 touch ~/code/devoted-transportation-llc/.env
 s2i build \
--e DOCUMENTROOT=/public/ \
 --environment-file ~/code/devoted-transportation-llc/.env \
 ~/code/devoted-transportation-llc/ \
 tap52384:ubi8-php-73 \
@@ -34,6 +33,13 @@ docker run \
 -p 8443:8443 \
 -v "~/code/devoted-transportation-llc/":/opt/app-root/src/ \
 tap52384:devoted
+
+echo "DOCUMENTROOT=/public/" > ~/code/devoted-transportation-llc/.env
+
+# Install Composer & the installer for Laravel
+docker exec -it devoted bash -c "curl -sS https://getcomposer.org/installer | php && php composer.phar global require laravel/installer"
+# Add Composer to $PATH and install Laravel
+docker exec -it devoted bash -c "export PATH=$PATH:/opt/app-root/src/.composer/vendor/bin && laravel new . && composer install && php artisan key:generate"
 ```
 
 ## Available Services + Laravel 6.x
