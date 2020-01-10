@@ -12,6 +12,37 @@ docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8
 # Specify the /public/ folder as the Apache documentroot as needed for Laravel
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 touch ~/code/devoted-transportation-llc/.env
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Install Homebrew (https://brew.sh) and necessary libraries
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    formulas=('openshift-cli' 'source-to-image')
+    for formula in ${formulas[@]}; do
+        brew ls --versions $formula > /dev/null
+        formula_installed=$?
+        if [ ! "$formula_installed" eq 0 ]; then
+            echo "Installing '$formula' formula..."
+            brew install $formula
+        else
+            echo "Formula '$formula' is already installed; skipping..."
+        fi
+    done
+    brew cask install docker
+elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" ]]; then
+    echo 'Detected that this script is running within Git Bash...'
+    $download_path = "~/AppData/Local/Microsoft/WindowsApps/"
+    declare -A zip_files
+    # OpenShift command-line tools
+    zip_files['openshift.zip']='https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-windows.zip'
+    # Source-to-Image
+    zip_files['s2i.zip']='https://github.com/openshift/source-to-image/releases/download/v1.2.0/source-to-image-v1.2.0-2a579ecd-windows-amd64.zip'
+    for key in "${!zip_files[@]}"; do
+        curl -L -o "$download_path/$key" "${zip_files[$key]}"
+        unzip -uv "$download_path/$key"
+        rm "$download_path/$key"
+    done
+fi
+
 s2i build \
 --environment-file ~/code/devoted-transportation-llc/.env \
 ~/code/devoted-transportation-llc/ \
