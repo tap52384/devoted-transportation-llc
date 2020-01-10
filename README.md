@@ -30,16 +30,24 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     brew cask install docker
 elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" ]]; then
     echo 'Detected that this script is running within Git Bash...'
-    $download_path = "~/AppData/Local/Microsoft/WindowsApps/"
-    declare -A zip_files
-    # OpenShift command-line tools
-    zip_files['openshift.zip']='https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-windows.zip'
-    # Source-to-Image
-    zip_files['s2i.zip']='https://github.com/openshift/source-to-image/releases/download/v1.2.0/source-to-image-v1.2.0-2a579ecd-windows-amd64.zip'
-    for key in "${!zip_files[@]}"; do
-        curl -L -o "$download_path/$key" "${zip_files[$key]}"
-        unzip -uv "$download_path/$key"
-        rm "$download_path/$key"
+    download_path="~/AppData/Local/Microsoft/WindowsApps"
+    files=(
+        # OpenShift command-line tools
+        'openshift.zip'
+        # Source-to-Image
+        's2i.zip'
+    )
+    urls=(
+        'https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-windows.zip'
+        'https://github.com/openshift/source-to-image/releases/download/v1.2.0/source-to-image-v1.2.0-2a579ecd-windows-amd64.zip'
+    )
+    for key in "${#files[@]}"; do
+        echo "Downloading '${urls[$key]}'..."
+        curl -L -o "$download_path/${files[$key]}" "${urls[$key]}"
+        echo "Unzipping '$download_path/${files[$key]}'..."
+        unzip -uv "$download_path/${files[$key]}"
+        echo "Deleting downloaded file '$download_path/${files[$key]}'..."
+        rm "$download_path/${files[$key]}"
     done
 fi
 
