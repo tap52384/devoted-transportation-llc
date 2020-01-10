@@ -83,12 +83,11 @@ docker run \
 tap52384:devoted
 
 # Install Composer & the installer for Laravel
-docker exec -it devoted bash -c 'laravel new . && npm install && npm run dev'
 docker exec -it devoted bash -c 'curl -sS https://getcomposer.org/installer | php && php composer.phar global require laravel/installer && laravel new .';
 # Install NPM, loads NPM, and Composer NPM packages
-docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.bash_profile && command -v nvm && echo $NVM_DIR && $NVM_DIR/nvm.sh && nvm --version && nvm install 8.17.0 && npm -v && npm install && npm run dev'
-
-echo "DOCUMENTROOT=/public/" > "$app_folder"/.env
+docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.bash_profile && command -v nvm && echo $NVM_DIR && \. $NVM_DIR/nvm.sh && nvm --version && nvm install 8.17.0 && npm -v && npm install && npm run dev'
+# Generates app key for Laravel
+docker exec -it devoted bash -c 'cp -fv $HOME/.env.example $HOME/.env && php artisan key:generate && echo "DOCUMENTROOT=/public/" >> $HOME/.env'
 ```
 
 ## Available Services + Laravel 6.x
