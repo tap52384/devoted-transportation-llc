@@ -21,3 +21,14 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+# Junk files created by Docker image
+/.bash_history
+.gitconfig
+.composer
+.npm
+.DS_Store
+composer.phar
+public/css
+public/js
+/.vscode-server

@@ -11,7 +11,10 @@ docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8
 # Next, "re-build" the app using s2i (source-to-image)
 # Specify the /public/ folder as the Apache documentroot as needed for Laravel
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
-touch ~/code/devoted-transportation-llc/.env
+
+# Change this variable to update the code folder location throughout this script
+app_folder=~/code/devoted-transportation-llc/
+touch "$app_folder".env
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Install Homebrew (https://brew.sh) and necessary libraries
@@ -51,9 +54,12 @@ elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" ]]; then
     done
 fi
 
+# error: Unable to load docker config: json: cannot unmarshal string into Go value of type docker.dockerConfig
+# docker login fixes this
+
 s2i build \
---environment-file ~/code/devoted-transportation-llc/.env \
-~/code/devoted-transportation-llc/ \
+--environment-file "$app_folder"/.env \
+"$app_folder" \
 tap52384:ubi8-php-73 \
 tap52384:devoted
 
@@ -62,23 +68,27 @@ docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/p
 docker rm -f devoted
 
 # Create the container "devoted" with the code folder mounted
+# Double quotes around ~/code/devoted-transportation-llc" fails on macOS, works in Git Bash
+# Trying to use a variable containing the path to see if that helps!
+
 docker run \
 --name devoted \
---env-file ~/code/devoted-transportation-llc/.env \
+--env-file "$app_folder"/.env \
 -e USER=$(whoami) \
 --hostname $(hostname) \
 -d \
 -p 8080:8080 \
 -p 8443:8443 \
--v "~/code/devoted-transportation-llc/":/opt/app-root/src/ \
+-v "$app_folder":/opt/app-root/src/ \
 tap52384:devoted
 
-echo "DOCUMENTROOT=/public/" > ~/code/devoted-transportation-llc/.env
-
 # Install Composer & the installer for Laravel
+docker exec -it devoted bash -c 'laravel new . && npm install && npm run dev'
 docker exec -it devoted bash -c 'curl -sS https://getcomposer.org/installer | php && php composer.phar global require laravel/installer && laravel new .';
 # Install NPM, loads NPM, and Composer NPM packages
 docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.bash_profile && command -v nvm && echo $NVM_DIR && $NVM_DIR/nvm.sh && nvm --version && nvm install 8.17.0 && npm -v && npm install && npm run dev'
+
+echo "DOCUMENTROOT=/public/" > "$app_folder"/.env
 ```
 
 ## Available Services + Laravel 6.x
