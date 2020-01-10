@@ -1,6 +1,56 @@
 # devoted-transportation-llc
 website for Devoted Transportation LLC
 
+## Setup local environment
+
+> Before running the bash script below to make changes to this site, on
+> Windows, you must install both Git for Windows and Docker Desktop first.
+
+```bash
+mkdir -p ~/code
+cd ~/code
+docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8-php-73
+git clone -q https://github.com/tap52384/devoted-transportation-llc.git
+app_folder=~/code/devoted-transportation-llc/
+touch "$app_folder".env
+s2i build \
+--environment-file "$app_folder"/.env \
+"$app_folder" \
+tap52384:ubi8-php-73 \
+tap52384:devoted
+
+# Stop and delete any containers based on the RedHat image
+docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/php-73 --format="{{.ID}}") || true
+docker rm -f devoted
+
+# Create the container "devoted" with the code folder mounted
+# Double quotes around ~/code/devoted-transportation-llc" fails on macOS, works in Git Bash
+# Trying to use a variable containing the path to see if that helps!
+
+docker run \
+--name devoted \
+--env-file "$app_folder"/.env \
+-e USER=$(whoami) \
+--hostname $(hostname) \
+-d \
+-p 8080:8080 \
+-p 8443:8443 \
+-v "$app_folder":/opt/app-root/src/ \
+tap52384:devoted
+
+# Install Composer packages
+docker exec -it devoted bash -c 'curl -sS https://getcomposer.org/installer | php && php composer.phar install'
+# Install NPM, loads NPM, and Composer NPM packages
+docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.bash_profile && command -v nvm && echo $NVM_DIR && \. $NVM_DIR/nvm.sh && nvm --version && nvm install 8.17.0 && npm -v && npm install && npm run dev'
+# Generates app key for Laravel
+docker exec -it devoted bash -c 'cp -fv $HOME/.env.example $HOME/.env && php artisan key:generate && echo "DOCUMENTROOT=/public/" >> $HOME/.env'
+```
+
+## Create a Laravel app for GoDaddy
+
+> Before running the bash script below to create a laravel app from scratch, on
+> Windows, you must install both Git for Windows and Docker Desktop first.
+
 ```bash
 # You can build the image without having to clone the repository locally
 # Uses the "master" branch for building the image
@@ -8,8 +58,7 @@ mkdir -p ~/code
 cd ~/code
 docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8-php-73
 
-# Next, "re-build" the app using s2i (source-to-image)
-# Specify the /public/ folder as the Apache documentroot as needed for Laravel
+# Clone the code
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 
 # Change this variable to update the code folder location throughout this script
@@ -82,7 +131,7 @@ docker run \
 -v "$app_folder":/opt/app-root/src/ \
 tap52384:devoted
 
-# Install Composer & the installer for Laravel
+# Install Composer & the installer for Laravel, and required packages for Laravel
 docker exec -it devoted bash -c 'curl -sS https://getcomposer.org/installer | php && php composer.phar global require laravel/installer && laravel new .';
 # Install NPM, loads NPM, and Composer NPM packages
 docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && source ~/.bash_profile && command -v nvm && echo $NVM_DIR && \. $NVM_DIR/nvm.sh && nvm --version && nvm install 8.17.0 && npm -v && npm install && npm run dev'
@@ -116,7 +165,7 @@ REFERENCES states(ID) ON DELETE CASCADE;
 ```bash
 # SSH into GoDaddy's servers
 # Reference URL: https://blog.netgloo.com/2015/08/06/configuring-godaddys-shared-hosting-for-laravel-and-git/
-ssh username@candjtowingservices.com
+ssh username@devotedtransportllc.com
 
 # Clone the code repo then rename the folder
 git clone https://github.com/tap52384/devoted-transportation-llc.git
