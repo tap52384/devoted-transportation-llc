@@ -9,21 +9,24 @@ website for Devoted Transportation LLC
 ```bash
 mkdir -p ~/code
 cd ~/code
-docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8-php-73
+docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384/ubi8-php-73:latest
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 app_folder=~/code/devoted-transportation-llc/
 touch "$app_folder".env
 s2i build \
 --application-name "Devoted Transportation LLC" \
 --environment-file "$app_folder"/.env \
-# --as-dockerfile "$app_folder"/Dockerfile.s2i \
 "$app_folder" \
-tap52384:ubi8-php-73 \
+tap52384/ubi8-php-73:latest \
 tap52384:devoted
 
 # Stop and delete any containers based on the RedHat image
 docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/php-73 --format="{{.ID}}") || true
 docker rm -f devoted
+
+# You can use the Remote Containers extension for VS Code to easily open your
+# code within the Docker container. You can get it from here:
+# https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
 # Create the container "devoted" with the code folder mounted
 # Double quotes around ~/code/devoted-transportation-llc" fails on macOS, works in Git Bash
@@ -58,7 +61,7 @@ docker exec -it devoted bash -c 'cp -fv $HOME/.env.example $HOME/.env && php art
 # Uses the "master" branch for building the image
 mkdir -p ~/code
 cd ~/code
-docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384:ubi8-php-73
+docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384/ubi8-php-73:latest
 
 # Clone the code
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
@@ -111,7 +114,7 @@ fi
 s2i build \
 --environment-file "$app_folder"/.env \
 "$app_folder" \
-tap52384:ubi8-php-73 \
+tap52384/ubi8-php-73:latest \
 tap52384:devoted
 
 # Stop and delete any containers based on the RedHat image

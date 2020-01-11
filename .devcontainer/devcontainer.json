@@ -9,7 +9,18 @@
 
     // https://github.com/tap52384/ubi8-php-73
     // Since this is an s2i-based image, this image must be created locally first
-    // using "s2i build", as described in the README
+    // using "s2i build", as described in more detail in the the README:
+    // docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384/ubi8-php-73:latest
+    // # Clone the code
+    // git clone -q https://github.com/tap52384/devoted-transportation-llc.git
+    // # Change this variable to update the code folder location throughout this script
+    // app_folder=~/code/devoted-transportation-llc/
+    // touch "$app_folder".env
+    // s2i build \
+    // --environment-file "$app_folder"/.env \
+    // "$app_folder" \
+    // tap52384/ubi8-php-73:latest \
+    // tap52384:devoted
     "image": "tap52384:devoted",
 
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
@@ -54,8 +65,16 @@
     ],
 
 	// Uncomment the next line to run commands after the container is created - for example installing git.
-	"postCreateCommand": "/usr/libexec/s2i/run",
+	"postCreateCommand": "bash source ${localWorkspaceFolder}/.bash_profile && echo 'hello there!' && curl -sS https://getcomposer.org/installer | php && php composer.phar install",
 
 	// Add the IDs of extensions you want installed when the container is created in the array below.
-	"extensions": []
+    "extensions": ["felixfbecker.php-debug"],
+
+    // By default, when VS Code starts a container, it will override the
+    // container's default command to be /bin/sh -c "while sleep 1000; do :; done".
+    // This is done because the container will stop if the default command fails or exits. However,
+    // this may not work for certain images.
+    // https://code.visualstudio.com/docs/remote/containers
+    // This is needed so that Apache runs normally!
+    "overrideCommand": false
 }
