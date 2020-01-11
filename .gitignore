@@ -24,3 +24,5 @@ composer.phar
 public/css
 public/js
 /.vscode-server
+Dockerfile.s2i
+/upload

@@ -14,7 +14,9 @@ git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 app_folder=~/code/devoted-transportation-llc/
 touch "$app_folder".env
 s2i build \
+--application-name "Devoted Transportation LLC" \
 --environment-file "$app_folder"/.env \
+# --as-dockerfile "$app_folder"/Dockerfile.s2i \
 "$app_folder" \
 tap52384:ubi8-php-73 \
 tap52384:devoted
