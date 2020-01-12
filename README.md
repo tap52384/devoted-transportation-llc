@@ -1,6 +1,16 @@
 # devoted-transportation-llc
 website for Devoted Transportation LLC
 
+## Color Palette
+
+Source: [Color Hunt](https://colorhunt.co/palette/168214)
+
+Colors:
+- `#af460f`
+- `#fe8761`
+- `#fed39f`
+- `#f6eec9`
+
 ## Setup local environment
 
 > Before running the bash script below to make changes to this site, on

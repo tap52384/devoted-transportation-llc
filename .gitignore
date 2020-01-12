@@ -14,9 +14,10 @@ yarn-error.log
 # Junk files created by Docker image
 /.bash_history
 /.bash_profile
-.gitconfig
+.cache
 .composer
 .config
+.gitconfig
 .npm
 .nvm
 .DS_Store
