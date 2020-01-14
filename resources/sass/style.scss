@@ -19,7 +19,8 @@ body {
 }
 
 .home-main .jumbotron {
-    min-height: 40vh;
     background-color: transparent;
     color: #fff;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;
 }

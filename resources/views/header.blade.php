@@ -70,7 +70,7 @@
 </nav>
 
 <section class="home-main">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid min-vh-100">
         <div class="container">
             <div class="row">
             <div class="col-md-6 my-auto">
