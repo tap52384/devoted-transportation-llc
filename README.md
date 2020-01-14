@@ -3,7 +3,9 @@ website for Devoted Transportation LLC
 
 ## Color Palette
 
-Source: [Color Hunt](https://colorhunt.co/palette/168214)
+Source: [Color Hunt - Palette 168214](https://colorhunt.co/palette/168214)
+[Color Hunt - Palette 7642](https://colorhunt.co/palette/7642)
+[Color Hunt - Palette 166114](https://colorhunt.co/palette/166114)
 
 Colors:
 - `#af460f`
@@ -154,6 +156,17 @@ docker exec -it devoted bash -c 'touch ~/.bash_profile && curl -o- https://raw.g
 docker exec -it devoted bash -c 'cp -fv $HOME/.env.example $HOME/.env && php artisan key:generate && echo "DOCUMENTROOT=/public/" >> $HOME/.env'
 ```
 
+## Twitter Bootstrap Scaffolding
+
+Add Bootstrap 4 to Laravel via the instructions [here](https://laravel.com/docs/6.x/frontend).
+
+```bash
+# Adds the "ui" command to Artisan
+composer require laravel/ui --dev
+
+php artisan ui bootstrap
+```
+
 ## Available Services + Laravel 6.x
 
 The list of services provided are in an array in the `AppServiceProvider` class.
@@ -251,3 +264,4 @@ __GoDaddy__.
 - <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept>
 - <https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types>
 - <https://stackoverflow.com/a/1545264/1620794>
+- [The best favicon generator yet](https://realfavicongenerator.net/)

@@ -41,8 +41,17 @@
         "--env-file=${localWorkspaceFolder}/.env"
     ],
 
+    // An array of additional mount points to add to the container. Each value
+    // is a string that accepts the same values as the Docker CLI --mount flag.
+    // You can use ${localWorkspaceFolder} in this property to refer to the local
+    // source code.
+    // https://code.visualstudio.com/docs/remote/containers#_devcontainerjson-reference
+    "mounts":[
+        "source=${localWorkspaceFolder},target=/opt/app-root/src,type=bind,readonly=0"
+    ],
+
     // For "type=volume", source names the shared volume instead of specifying the source
-    "workspaceMount": "source=${localWorkspaceFolder},target=/opt/app-root/src,type=bind,readonly=0",
+    // "workspaceMount": "source=${localWorkspaceFolder},target=/opt/app-root/src,type=bind,readonly=0",
     "workspaceFolder": "/opt/app-root/src/",
 
 	// Uncomment the next line to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker for details.

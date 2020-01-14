@@ -1,0 +1,25 @@
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.navbar-brand img {
+    height: 3rem;
+}
+
+#top-site-nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    height: 4rem;
+    /* color: rgba(0, 0, 0, 0.3); */
+}
+
+.home-main {
+    padding-top: 4rem;
+    background-color: #02a8a8;
+}
+
+.home-main .jumbotron {
+    min-height: 40vh;
+    background-color: transparent;
+    color: #fff;
+}
