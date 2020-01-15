@@ -265,3 +265,4 @@ __GoDaddy__.
 - <https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/conf/mime.types>
 - <https://stackoverflow.com/a/1545264/1620794>
 - [The best favicon generator yet](https://realfavicongenerator.net/)
+- [CSS3 Patterns Gallery](https://leaverou.github.io/css3patterns/)
