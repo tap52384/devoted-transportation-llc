@@ -38,11 +38,13 @@
 
     <!-- Add your site or application content here -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation" id="top-site-nav">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/">
     <img src="{{ asset('img/logo2.png') }}" alt="Logo" />
     <span>Devoted Transportation LLC</span>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+  aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -52,36 +54,34 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="#">Gallery</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
       </li>
     </ul>
   </div>
 </nav>
 
 <section class="home-main">
-    <div class="jumbotron jumbotron-fluid min-vh-100">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
             <div class="col-md-6 my-auto">
-                <h1 class="display-4">Transportation made <br />just for you.</h1>
+                <h1 class="display-4 text-md-left">Transportation made <br />just for you.</h1>
                 <p>
                     With a fleet of vehicles equipped to meet the needs of the
                     elderly, individuals with disabilities, and transportation
                     disadvantaged populations, we are available to get you where
                     you need to go.
                 </p>
-                <button type="button" class="btn btn-light btn-lg">
+                <button type="button" class="btn btn-light btn-lg btn-block">
                     Schedule a Pickup Today
                 </button>
             </div>

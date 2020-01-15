@@ -10,7 +10,6 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     height: 4rem;
     background-color: transparent;
-    /* color: rgba(0, 0, 0, 0.3); */
 }
 
 .home-main .jumbotron {
@@ -23,4 +22,15 @@ body {
     linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
     linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
     background-size: 70px 120px;
+    min-height: 90vh;
+    padding-top: 8rem;
+    margin-bottom: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+h1.display-4 {
+    text-align: center;
 }
