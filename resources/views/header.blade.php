@@ -92,3 +92,59 @@
         </div> <!-- /container -->
     </div> <!-- /.jumbotron-fluid -->
 </section>
+
+<section class="row">
+    <div class="container">
+        <h1 class="text-center mt-4" style="color: #35495e;">What is Non-Emergency Medical Transportation (NEMT)?</h1>
+        <p>
+        Medicaid non-emergency medical transportation (NEMT) is an important benefit
+for beneficiaries who need to get to and from medical services but have no means of
+transportation.
+        </p>
+        <p>
+
+</p>
+</div>
+</section>
+
+<section class="row">
+    <div class="col-md-6">
+</div>
+<div class="col-md-6">
+</div>
+</section>
+
+<section data-vc-full-width="true" data-vc-full-width-init="true" data-vc-stretch-content="true"
+    class="vc_row wpb_row vc_row-fluid  vc_custom_1572510095304   hongo-stretch-content vc_row-no-padding hongo-stretch-content-fluid"
+    style="position: relative; left: -255px; box-sizing: border-box; width: 1680px;">
+    <div class="wpb_column vc_column_container col-xs-mobile-fullwidth vc_col-sm-6 wow fadeIn animated"
+        style="visibility: visible; animation-name: fadeIn;">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="shop-banner-unique-1 hongo-shop-banner-4 vc_custom_1567240678190">
+                    <div class="hongo-shop-banner-content">
+                        <div class="shop-banner-sub-title alt-font">New collection</div>
+                        <div class="shop-banner-title hongo_font_1567240678170 alt-font">Wooden<br>Lamps</div><a
+                            class="btn-link alt-font btn-medium" href="http://hongo.themezaa.com/furniture/shop/"
+                            target="_self">MORE COLLECTION</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wpb_column vc_column_container col-xs-mobile-fullwidth vc_col-sm-6 wow fadeIn animated"
+        style="visibility: visible; animation-name: fadeIn;">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="shop-banner-unique-2 hongo-shop-banner-4 vc_custom_1567240692110">
+                    <div class="hongo-shop-banner-content">
+                        <div class="shop-banner-sub-title alt-font">New collection</div>
+                        <div class="shop-banner-title hongo_font_1567240692090 alt-font">Modern<br>Design</div><a
+                            class="btn-link alt-font btn-medium" href="http://hongo.themezaa.com/furniture/shop/"
+                            target="_self">MORE COLLECTION</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
