@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('master'); // return view('welcome');
 });
+
+Route::get('/contact-us', function () {
+    return view('contactus');
+});

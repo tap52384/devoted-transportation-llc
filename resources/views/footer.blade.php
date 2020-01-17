@@ -6,6 +6,26 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p>This is alternate text for the logo</p>
+                <p>Social media icons go here.</p>
+            </div> <!-- /.col-md-3 -->
+            <div class="col-md-4">
+                <p>Links to different portions of the site</p>
+            </div> <!-- /.col-md-3 -->
+            <div class="col-md-4">
+                <p>Instagram posts?</p>
+                <p>Store location with google map?</p>
+            </div> <!-- /.col-md-3 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+  </footer>
+
 </body>
 
 </html>

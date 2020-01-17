@@ -6,12 +6,13 @@ website for Devoted Transportation LLC
 Source: [Color Hunt - Palette 168214](https://colorhunt.co/palette/168214)
 [Color Hunt - Palette 7642](https://colorhunt.co/palette/7642)
 [Color Hunt - Palette 166114](https://colorhunt.co/palette/166114)
+[Color Hunt - Palette 1504](https://colorhunt.co/palette/1504)
 
 Colors:
-- `#af460f`
-- `#fe8761`
-- `#fed39f`
-- `#f6eec9`
+- `#48466d`
+- `#3d84a8`
+- `#46cdcf`
+- `#abedd8`
 
 ## Setup local environment
 
