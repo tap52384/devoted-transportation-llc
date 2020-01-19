@@ -5,7 +5,7 @@
 	"name": "Devoted Transportation LLC",
 
 	// Sets the run context to one level up instead of the .devcontainer folder.
-    "context": "..",
+    // "context": "..",
 
     // https://github.com/tap52384/ubi8-php-73
     // Since this is an s2i-based image, this image must be created locally first
@@ -69,8 +69,8 @@
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
 	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
 	"appPort": [
-        "8080:8080/tcp",
-        "8443:8443/tcp"
+        "8087:8080/tcp",
+        "8447:8443/tcp"
     ],
 
 	// Uncomment the next line to run commands after the container is created - for example installing git.

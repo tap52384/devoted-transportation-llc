@@ -14,9 +14,9 @@
                     disadvantaged populations, we are available to get you where
                     you need to go.
                 </p>
-                <button type="button" class="btn btn-light btn-lg btn-block">
+                <a href="#" type="button" class="btn btn-light btn-lg btn-block">
                     Schedule a Pickup Today
-                </button>
+                </a>
             </div>
             <div class="col-md-6">
                 <img src="{{ asset( 'img/nemt-van.png' ) }}" class="img-fluid" alt="nemt-van" />
@@ -45,7 +45,12 @@ transportation.
         the highest customer services to our clients throughout Durham and the
         surrounding areas.
         </p>
-</div>
+        <div class="text-center">
+            <a href="#" class="btn btn-dark mb-3">
+                Learn more about NEMT and how we can help
+            </a>
+        </div>
+    </div> <!-- /.container -->
 </section>
 
 <section class="container-fluid two-tone-section my-5">
@@ -56,17 +61,34 @@ transportation.
                     <h1 class="text-md-left">CPR certified.<br />First Aid kits ready.</h1>
                     <p>All of our drivers are trained and equipped to provide
                     the best assistance until first responders arrive.</p>
-                    <button class="btn btn-dark btn-block">See how we can serve you</button>
+                    <a href="#" class="btn btn-dark btn-block mb-3">See how we can serve you</a>
                 </div>
                 <div class="col-md-6 my-auto px-md-5 text-center">
                     <img src="{{ asset( 'img/cpr-heart.png' ) }}" class="img-fluid" alt="cpr certified" />
                 </div>
             </div> <!-- /.row -->
-        </div>
+        </div> <!-- /.col-md-6.left-side -->
         <div class="col-md-6 right-side">
-        Two
-        </div>
+            <div class="row">
+                <div class="col-md-6 my-auto px-md-5">
+                    <h1 class="text-md-left">CPR certified.<br />First Aid kits ready.</h1>
+                    <p>All of our drivers are trained and equipped to provide
+                    the best assistance until first responders arrive.</p>
+                    <a href="#" class="btn btn-dark btn-block mb-3">See how we can serve you</a>
+                </div>
+                <div class="col-md-6 my-auto px-md-5 text-center">
+                    <img src="{{ asset( 'img/cpr-heart.png' ) }}" class="img-fluid" alt="cpr certified" />
+                </div>
+            </div> <!-- /.row -->
+        </div> <!-- /.col-md-6.left-side -->
     </div>
+</section>
+
+<section class="commercial-section text-center container mb-5">
+    <h1 class="text-center mt-4" style="color: #48466d;">Watch the video below to learn more!</h1>
+    <!-- https://github.com/paulirish/lite-youtube-embed -->
+    <lite-youtube videoid="Bey4XXJAqS8"></lite-youtube>
+    <!-- <iframe width="792" height="446" src="https://www.youtube.com/embed/Bey4XXJAqS8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 </section>
 @show
 

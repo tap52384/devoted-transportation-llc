@@ -267,3 +267,9 @@ __GoDaddy__.
 - <https://stackoverflow.com/a/1545264/1620794>
 - [The best favicon generator yet](https://realfavicongenerator.net/)
 - [CSS3 Patterns Gallery](https://leaverou.github.io/css3patterns/)
+- [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed)
+
+## SVG
+
+To style an SVG, it's best to include it inline.
+Make sure the SVG has primitives (rect, circle, path) included.
