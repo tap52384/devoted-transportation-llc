@@ -1,1 +1,7 @@
-@extend('master')
+@extends('master')
+
+@section('content')
+
+@include('subheader')
+
+@endsection
