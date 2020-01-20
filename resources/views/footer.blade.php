@@ -26,7 +26,12 @@
                 <p>
                     123 Anywhere Street<br />
                     Somewhere, NC 27809<br />
-                    (919) 123-4567
+                    <a href="tel:+19191234567" title="(919) 123-4567">
+                        (919) 123-4567
+                    </a><br />
+                    <a href="mailto:info@devotedtransportationllc.com" title="info@devotedtransportationllc.com">
+                        info@devotedtransportationllc.com
+                    </a>
                 </p>
                 <ul class="list-inline ml-2 social-links">
                         <li class="list-inline-item mr-2">

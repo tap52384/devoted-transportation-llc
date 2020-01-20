@@ -68,7 +68,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">
             <span class="menu-hover-line">
-                Services
+                About Us
             </span>
         </a>
       </li>
@@ -82,7 +82,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#">
             <span class="menu-hover-line">
-                About Us
+                FAQ
             </span>
         </a>
       </li>
