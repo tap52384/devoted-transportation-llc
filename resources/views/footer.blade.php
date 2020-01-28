@@ -10,7 +10,7 @@
   <footer class="pt-5 pb-2">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 text-center text-md-left">
                 <a href="/" title="Devoted Transportation LLC">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -52,7 +52,7 @@
                     </ul>
 
             </div> <!-- /.col-md-3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 text-center text-md-left">
                 <p class="font-weight-bold">Site Links</p>
                 <ul class="list-unstyled">
                     <li>
@@ -77,7 +77,7 @@
                     </li>
                 </ul>
             </div> <!-- /.col-md-3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 text-center text-md-left">
                 <p class="font-weight-bold">Location - Google Maps</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3227.772466448184!2d-78.94041728429329!3d36.001425780120975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ace6b201eb327f%3A0xb21f1655ee1ca38d!2sDuke%20University!5e0!3m2!1sen!2sus!4v1579399839704!5m2!1sen!2sus"
                     width="100%" height="135"
@@ -85,7 +85,7 @@
             </div> <!-- /.col-md-3 -->
         </div> <!-- /.row -->
         <div style="border-top: 1px solid #9e9e9e">
-            <p class="small">Copyright &copy; {{ date('Y') }} Devoted Transportation LLC. All rights reserved.</p>
+            <p class="small text-center text-md-left">Copyright &copy; {{ date('Y') }} Devoted Transportation LLC. All rights reserved.</p>
         </div>
         </div> <!-- /.container -->
   </footer>

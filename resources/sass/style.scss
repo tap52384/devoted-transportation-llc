@@ -2,6 +2,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.img-fluid-half {
+    max-width: 50%;
+    height: auto;
+}
+
 .navbar-brand svg {
     height: 3rem;
 }
@@ -58,6 +63,26 @@ h1.display-4 {
 
 .row.two-tone-section .right-side {
     background-color: $theme-color-four;
+}
+
+.subheader {
+    background-image: url(img/traffic-jam.jpg);
+    background-repeat: no-repeat;
+    background-position: 0;
+    padding-top: 3rem;
+}
+
+.subheader .jumbotron {
+    background-color: transparent;
+    min-height: 40vh;
+}
+
+.subheader span {
+    background-color: $theme-color-two;
+    padding: 0.25rem;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 footer {

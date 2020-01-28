@@ -2,6 +2,12 @@
 
 @section('content')
 
-@include('subheader')
+@include(
+    'subheader',
+    [
+        'subheaderBg' => 'traffic-jam.jpg',
+        'subheaderText' => 'Contact Us'
+    ]
+)
 
 @endsection

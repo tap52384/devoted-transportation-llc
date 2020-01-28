@@ -55,29 +55,29 @@ transportation.
 <section class="row two-tone-section my-5">
         <div class="col-md-6 left-side py-3 px-4">
             <div class="row">
-                <div class="col-md-12 my-3 col-lg-6">
-                    <h1 class="text-md-left">CPR certified.<br />First Aid kits ready.</h1>
+                <div class="col-md-12 my-1 col-lg-6">
+                    <h1 class="text-center text-md-left">CPR certified. First Aid kits ready.</h1>
                     <p>All of our drivers are trained and equipped to provide
                     urgent treatment until first responders arrive. Our company uses
                     specially-designed vehicles to accommodate a variety of
                     needs to make transportation safe and comfortable.</p>
                 </div>
-                <div class="col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
-                    <img src="{{ asset( 'img/cpr-heart.png' ) }}" class="img-fluid" alt="CPR certified" />
+                <div class="text-center col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
+                    <img src="{{ asset( 'img/cpr-heart.png' ) }}" class="img-fluid-half" alt="CPR certified" />
                 </div>
                 <a href="#" class="btn btn-dark btn-block mb-3 mx-3">See how prepared we are for you</a>
             </div> <!-- /.row -->
         </div> <!-- /.col-md-6.left-side -->
         <div class="col-md-6 right-side py-3 px-4">
             <div class="row">
-                <div class="col-md-12 my-3 col-lg-6">
-                    <h1 class="text-md-left">No more missed doctor's appointments.</h1>
+                <div class="col-md-12 my-1 col-lg-6">
+                    <h1 class="text-center text-md-left">No more missed doctor's appointments.</h1>
                     <p>More than 3.5 million people miss doctor's appointments
                     each year. Our drivers arrive early to make sure that you
                     get to your destinations on time, every time.<br /><br /></p>
                 </div>
-                <div class="col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
-                    <img src="{{ asset( 'img/clock-logo-black.png' ) }}" class="img-fluid" alt="Always on time!" />
+                <div class="text-center col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
+                    <img src="{{ asset( 'img/clock-logo-black.png' ) }}" class="img-fluid-half" alt="Always on time!" />
                 </div>
                 <a href="#" class="btn btn-dark btn-block mb-3 mx-3">Choose Devoted to get there on time</a>
             </div> <!-- /.row -->

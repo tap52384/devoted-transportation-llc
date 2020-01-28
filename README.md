@@ -51,8 +51,8 @@ docker run \
 -e USER=$(whoami) \
 --hostname $(hostname) \
 -d \
--p 8080:8080 \
--p 8443:8443 \
+-p 8087:8080 \
+-p 8447:8443 \
 -v "$app_folder":/opt/app-root/src/ \
 tap52384:devoted
 
@@ -144,8 +144,8 @@ docker run \
 -e USER=$(whoami) \
 --hostname $(hostname) \
 -d \
--p 8080:8080 \
--p 8443:8443 \
+-p 8087:8080 \
+-p 8447:8443 \
 -v "$app_folder":/opt/app-root/src/ \
 tap52384:devoted
 
@@ -168,11 +168,28 @@ composer require laravel/ui --dev
 php artisan ui bootstrap
 ```
 
-## Available Services + Laravel 6.x
+## Laravel 6.x
+
+### Sharing data with all views
 
 The list of services provided are in an array in the `AppServiceProvider` class.
 This allows the data to be shared with all views and updated everywhere on the
 site at once. This technique is outlined in [the documentation](https://laravel.com/docs/6.x/views#sharing-data-with-all-views).
+
+### Creating Controllers for CRUD operations
+
+```bash
+# https://laravel.com/docs/5.7/controllers#resource-controllers
+# Creates the Contact model and ContactController controller classes
+php artisan make:controller ContactController --resource --model=Contact -q
+```
+
+### Creating Mailables
+
+```bash
+# https://laravel.com/docs/5.7/mail#generating-mailables
+php artisan make:mail ContactSubmitted
+```
 
 ## Adding a foreign key constrain to MySQL in a single statement
 
