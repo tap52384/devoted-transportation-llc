@@ -74,7 +74,7 @@ transportation.
                     <h1 class="text-center text-md-left">No more missed doctor's appointments.</h1>
                     <p>More than 3.5 million people miss doctor's appointments
                     each year. Our drivers arrive early to make sure that you
-                    get to your destinations on time, every time.<br /><br /></p>
+                    get to your destinations on time, every time.</p>
                 </div>
                 <div class="text-center col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
                     <img src="{{ asset( 'img/clock-logo-black.png' ) }}" class="img-fluid-half" alt="Always on time!" />
@@ -83,6 +83,26 @@ transportation.
             </div> <!-- /.row -->
         </div> <!-- /.col-md-6.left-side -->
 </section>
+
+{{-- <section class="container-fluid two-tone-section my-5">
+    <div class="row row-cols-2">
+        <div class="col left-side">
+            <h1 class="text-center text-md-left">CPR certified. First Aid kits ready.</h1>
+                <p class="mb-sm-1">All of our drivers are trained and equipped to provide
+                urgent treatment until first responders arrive. Our company uses
+                specially-designed vehicles to accommodate a variety of
+                needs to make transportation safe and comfortable.</p>
+                <img src="{{ asset( 'img/cpr-heart.png' ) }}" class="img-fluid-half" alt="CPR certified" />
+        </div> <!-- /.col -->
+        <div class="col right-side">
+            <h1 class="text-center text-md-left">No more missed doctor's appointments.</h1>
+                <p class="mb-sm-4">More than 3.5 million people miss doctor's appointments
+                each year. Our drivers arrive early to make sure that you
+                get to your destinations on time, every time.</p>
+                <img src="{{ asset( 'img/clock-logo-black.png' ) }}" class="img-fluid-half" alt="Always on time!" />
+        </div> <!-- /.col -->
+    </div> <!-- /.row-cols-2 -->
+</section> --}}
 
 <section class="commercial-section text-center container my-5">
     <h1 class="text-center mt-4">Watch the video below to learn more!</h1>

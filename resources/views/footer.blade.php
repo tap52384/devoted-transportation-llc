@@ -10,7 +10,7 @@
   <footer class="pt-5 pb-2">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center text-md-left">
+            <div class="col-md-5 text-center text-md-left">
                 <a href="/" title="Devoted Transportation LLC">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -52,7 +52,7 @@
                     </ul>
 
             </div> <!-- /.col-md-3 -->
-            <div class="col-md-4 text-center text-md-left">
+            <div class="col-md-3 text-center text-md-left">
                 <p class="font-weight-bold">Site Links</p>
                 <ul class="list-unstyled">
                     <li>

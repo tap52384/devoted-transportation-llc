@@ -70,6 +70,7 @@ h1.display-4 {
     background-repeat: no-repeat;
     background-position: 0;
     padding-top: 3rem;
+    background-size: cover;
 }
 
 .subheader .jumbotron {
@@ -83,6 +84,10 @@ h1.display-4 {
     color: #fff;
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+.subheader h1 {
+    text-shadow: 1px 1px 1px #000;
 }
 
 footer {
@@ -116,6 +121,7 @@ footer a {
     position: relative;
     text-decoration: none;
     padding-bottom: 2px;
+    text-shadow: 1px 1px 1px #000;
 }
 
 #top-site-nav a.nav-link span.menu-hover-line:hover {
@@ -151,4 +157,16 @@ lite-youtube {
 
 .commercial-section h1, .home-nemt-section h1 {
     color: $theme-color-one;
+}
+
+.contact-info-list i.fa {
+    font-size: 2rem;
+}
+
+.contact-us-pre-form-picture {
+    background-image: url(img/nemt-driver.jpg);
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: auto;
+    min-height: 40vh;
 }
