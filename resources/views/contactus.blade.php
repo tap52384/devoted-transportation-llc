@@ -88,29 +88,29 @@
                         <div class="form-row mb-3">
                             <div class="form-group col-md-6">
                                 <label for="contact_first_name">Point of Contact First Name</label>
-                                <input type="text" class="form-control" id="contact_first_name" name="contact_last_name"
+                                <input type="text" class="form-control" id="contact_first_name" name="contact_first_name"
                                 aria-describedby="contact_first_name_help" autocomplete="given-name" required />
                                 <small id="contact_first_name_help" class="form-text">Please enter the name of the person completing this form</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
                                 <label for="last_name">Point of Contact Last Name</label>
                                 <input type="text" class="form-control" id="last_name" name="last_name"
-                                aria-describedby="last_name_help" autocomplete="family-name" required />
-                                <small id="last_name_help" class="form-text">Last name of the person completing this form</small>
+                                aria-describedby="contact_last_name_help" autocomplete="family-name" required />
+                                <small id="contact_last_name_help" class="form-text">Last name of the person completing this form</small>
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row -->
                         <div class="form-row mb-3">
                             <div class="form-group col-md-6">
-                                <label for="first_name">Passenger First Name</label>
+                                <label for="passenger_first_name">Passenger First Name</label>
                                 <input type="text" class="form-control" id="passenger_first_name" name="passenger_first_name"
                                 aria-describedby="passenger_first_name_help" autocomplete="given-name" required />
                                 <small id="passenger_first_name_help" class="form-text">First name of the passenger</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
-                                <label for="last_name" class="col-form-label">Passenger Last Name</label>
-                                <input type="text" class="form-control" id="last_name" name="last_name"
-                                aria-describedby="last_name_help" autocomplete="family-name" required />
-                                <small id="last_name_help" class="form-text">Last name of the passenger</small>
+                                <label for="passenger_last_name" class="col-form-label">Passenger Last Name</label>
+                                <input type="text" class="form-control" id="passenger_last_name" name="passenger_last_name"
+                                aria-describedby="passenger_last_name_help" autocomplete="family-name" required />
+                                <small id="passenger_last_name_help" class="form-text">Last name of the passenger</small>
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row -->
                         <div class="form-row mb-3">
