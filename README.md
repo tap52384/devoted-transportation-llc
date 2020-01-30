@@ -1,5 +1,5 @@
 # devoted-transportation-llc
-website for Devoted Transportation LLC
+Website for Devoted Transportation LLC - <http://devotedtransportllc.com>
 
 ## Color Palette
 
@@ -214,7 +214,9 @@ REFERENCES states(ID) ON DELETE CASCADE;
 ssh username@devotedtransportllc.com
 
 # Clone the code repo then rename the folder
+cd ~
 git clone https://github.com/tap52384/devoted-transportation-llc.git
+cp -nv ~/devoted-transportation-llc/.env.example ~/devoted-transportation-llc/.env
 mv ~/devoted-transportation-llc/ ~/code/
 
 # Delete the public_html folder
