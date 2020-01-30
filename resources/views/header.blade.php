@@ -50,7 +50,7 @@
 </svg>
     <span>Devoted Transportation LLC</span>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse"
+  <button class="navbar-toggler mr-1" type="button" data-toggle="collapse"
   data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
   aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/about-us">
             <span class="menu-hover-line">
                 About Us
             </span>
@@ -80,7 +80,7 @@
         </a>
       </li> --}}
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/faq">
             <span class="menu-hover-line">
                 FAQ
             </span>

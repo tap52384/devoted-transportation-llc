@@ -62,6 +62,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/faq" title="FAQ">
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
                         <a href="/contact-us" title="Contact Us">
                             Contact Us
                         </a>

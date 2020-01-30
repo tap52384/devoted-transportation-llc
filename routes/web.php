@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/contact-us', function () {
     return view('contactus');
 });
+
+Route::get('/about-us', function () {
+    return view('aboutus');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});

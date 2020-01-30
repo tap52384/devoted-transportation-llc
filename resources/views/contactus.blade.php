@@ -170,9 +170,13 @@
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row mb-3 -->
                         <div class="form-row mb-3">
-                            @foreach (['pickup_', 'return_'] as $rideType)
+                            @foreach (
+                                [
+                                    'pickup_' => 'Pickup',
+                                    'return_' => 'Return'
+                                ] as $rideType => $value)
                             <div class="form-group col-md-6">
-                                <label for="{{ $rideType }}date" class="col-form-label">Pickup Date</label>
+                                <label for="{{ $rideType }}date" class="col-form-label">{{ $value }} Date</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="{{ $rideType }}date_addon">
@@ -183,7 +187,7 @@
                                     aria-label="{{ $rideType }}date" aria-describedby="{{ $rideType }}date_addon"
                                     maxlength="255" id="{{ $rideType }}date" name="{{ $rideType }}date" />
                                 </div> <!-- /.input-group mb-3 -->
-                                <label for="{{ $rideType }}time" class="col-form-label">Pickup Time</label>
+                                <label for="{{ $rideType }}time" class="col-form-label">{{ $value }} Time</label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="{{ $rideType }}time_addon">
@@ -194,7 +198,7 @@
                                     aria-label="{{ $rideType }}time" aria-describedby="{{ $rideType }}time_addon"
                                     maxlength="255" id="{{ $rideType }}time" name="{{ $rideType }}time" />
                                 </div> <!-- /.input-group mb-3 -->
-                                <label for="address_1">Pickup Address</label>
+                                <label for="address_1">{{ strcasecmp($rideType, 'pickup_') === 0 ? $value : 'Destination' }} Address</label>
                                 <input type="text" class="form-control" id="{{ $rideType }}address_1" placeholder="Address 1"
                                 autocomplete="street-address" name="{{ $rideType }}address_1" value="{{ old($rideType . 'address_1') }}" />
                                 <input type="text" class="form-control" id="{{ $rideType }}address_2" name="{{ $rideType }}address_2" placeholder="Address 2"

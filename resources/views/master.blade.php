@@ -25,7 +25,7 @@
     </div> <!-- /.jumbotron-fluid -->
 </section>
 
-<section class="row my-5 home-nemt-section">
+<section class="row my-5 home-nemt-section px-2">
     <div class="container">
         <h1 class="text-center mt-4">What is Non-Emergency Medical Transportation (NEMT)?</h1>
         <p>
