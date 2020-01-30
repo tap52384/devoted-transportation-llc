@@ -214,8 +214,8 @@
                             </div> <!-- /.form-group .col-md-6 -->
                             @endforeach
                         </div> <!-- /.form-row mb-3 -->
-                        <button type="submit" class="btn btn-block btn-dark">
-                            Send Message
+                        <button type="submit" class="btn btn-block btn-dark" id="contact_submit" name="contact_submit">
+                            Send Transportation Request
                         </button>
                     </form>
                 </div> <!-- /.bg-light-gray -->
