@@ -18,7 +18,7 @@
             <i class="fa fa-globe" aria-hidden="true"></i>
         </div> <!-- /.col-1 -->
         <div class="col-11">
-            <span class="text-bold">Address Details</span><br />
+            <span class="font-weight-bold">Address Details</span><br />
             <span>123 Anywhere Street</span><br />
             <span>Somewhere, NC 27809</span>
         </div> <!-- /.col-11 -->
@@ -28,7 +28,7 @@
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
         </div> <!-- /.col-1 -->
         <div class="col-11">
-            <span class="text-bold">Email Address</span><br />
+            <span class="font-weight-bold">Email Address</span><br />
             <span>
                 <a href="mailto:info@devotedtransportationllc.com">
                     info@devotedtransportationllc.com
@@ -41,7 +41,7 @@
             <i class="fa fa-mobile" aria-hidden="true"></i>
         </div> <!-- /.col-1 -->
         <div class="col-11">
-            <span class="text-bold">Telephone Number</span><br />
+            <span class="font-weight-bold">Telephone Number</span><br />
             <span>
                 <a href="tel:+19191234567">
                     (919) 123-4567
@@ -54,7 +54,7 @@
             <i class="fa fa-clock-o" aria-hidden="true"></i>
         </div> <!-- /.col-1 -->
         <div class="col-11">
-            <span class="text-bold">Hours of Operation</span><br />
+            <span class="font-weight-bold">Hours of Operation</span><br />
             <span>
                 <span>Monday – Friday: 09:00AM – 10:00PM</span><br />
                 <span>Sunday &amp; Saturday: 10:30AM – 11:00PM</span>
