@@ -37,7 +37,7 @@
   <![endif]-->
 
     <!-- Add your site or application content here -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation" id="top-site-nav">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="top-site-nav">
   <a class="navbar-brand" href="/">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -72,13 +72,13 @@
             </span>
         </a>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="#">
             <span class="menu-hover-line">
                 Gallery
             </span>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="#">
             <span class="menu-hover-line">

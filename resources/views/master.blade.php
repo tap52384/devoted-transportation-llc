@@ -14,7 +14,7 @@
                     we are available to get you where you need to go.
                 </p>
                 <a href="#" type="button" class="btn btn-light btn-lg btn-block">
-                    Schedule a Pickup Today
+                    Call and schedule a pickup today
                 </a>
             </div>
             <div class="col-md-6">

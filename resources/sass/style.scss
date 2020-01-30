@@ -164,9 +164,31 @@ lite-youtube {
 }
 
 .contact-us-pre-form-picture {
-    background-image: url(img/nemt-driver.jpg);
+    background-image: url(img/van-in-tunnel.png);
     background-repeat: no-repeat;
-    background-position: 0;
-    background-size: auto;
-    min-height: 40vh;
+    background-position: left center;
+    background-size: cover;
+    min-height: 60vh;
 }
+
+.separator-style-2 {
+    width: 20%;
+    border-top: 3px solid #c87d65;
+}
+
+.bg-light-gray {
+    background-color: #f7f7f7;
+}
+
+.footer-google-maps-iframe {
+    width: 100%;
+    height: 135px;
+}
+
+iframe {
+    border: 0;
+}
+
+// #transportation-request-form label {
+//     font-size: 0.8rem;
+// }
