@@ -5,6 +5,7 @@
 @include(
     'subheader',
     [
+        'subtext' => 'Who We Are & Our Mission',
         'subheaderBg' => 'nemt-multiple-vehicles.jpg',
         'subheaderText' => 'About Us'
     ]

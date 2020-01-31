@@ -13,7 +13,7 @@
                     elderly, individuals with disabilities, and transportation-disadvantaged populations,
                     we are available to get you where you need to go.
                 </p>
-                <a href="#" type="button" class="btn btn-light btn-lg btn-block">
+                <a href="/contact-us" role="button" class="btn btn-light btn-lg btn-block">
                     Call and schedule a pickup today
                 </a>
             </div>
@@ -45,7 +45,7 @@ transportation.
         surrounding areas.
         </p>
         <div class="text-center">
-            <a href="#" class="btn btn-dark mb-3">
+            <a href="/about-us" role="button" class="btn btn-dark mb-3">
                 Learn more about NEMT and how we can help
             </a>
         </div>
@@ -65,7 +65,7 @@ transportation.
                 <div class="text-center col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
                     <img src="{{ asset( 'img/cpr-heart.png' ) }}" class="img-fluid-half" alt="CPR certified" />
                 </div>
-                <a href="#" class="btn btn-dark btn-block mb-3 mx-3">See how prepared we are for you</a>
+                <a href="/about-us" role="button" class="btn btn-dark btn-block mb-3 mx-3">See how prepared we are for you</a>
             </div> <!-- /.row -->
         </div> <!-- /.col-md-6.left-side -->
         <div class="col-md-6 right-side py-3 px-4">
@@ -79,7 +79,7 @@ transportation.
                 <div class="text-center col-md-12 col-lg-6 mb-2 mx-sm-5 mx-md-0 my-lg-auto">
                     <img src="{{ asset( 'img/clock-logo-black.png' ) }}" class="img-fluid-half" alt="Always on time!" />
                 </div>
-                <a href="#" class="btn btn-dark btn-block mb-3 mx-3">Choose Devoted to get there on time</a>
+                <a href="/contact-us" role="button" class="btn btn-dark btn-block mb-3 mx-3">Choose Devoted to get there on time</a>
             </div> <!-- /.row -->
         </div> <!-- /.col-md-6.left-side -->
 </section>

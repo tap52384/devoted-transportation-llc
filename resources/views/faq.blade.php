@@ -35,8 +35,8 @@
         </li>
         <li>
             <p class="lead font-weight-bold">How do I schedule a ride?</p>
-            <p>Call us toll-free at <a href="tel:+19191234567" title="(919) 123-4567">
-                (919) 123-4567
+            <p>Call us toll-free at <a href="tel:+1{{ $envPhoneNumber }}" title="{{ $envPhoneNumberFmt }}">
+                {{ $envPhoneNumberFmt }}
             </a> or <a href="/contact-us" title="Contact Us">submit a transportation request</a>
             to get a quote.</p>
         </li>

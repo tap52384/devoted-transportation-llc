@@ -13,7 +13,7 @@
 <div class="contact-info-list container">
     <div class="separator-style-2 mb-3"></div>
     <p class="lead">We would love to hear from you</p>
-    <div class="row mb-4">
+    {{-- <div class="row mb-4">
         <div class="col-1 my-auto">
             <i class="fa fa-globe" aria-hidden="true"></i>
         </div> <!-- /.col-1 -->
@@ -22,7 +22,7 @@
             <span>123 Anywhere Street</span><br />
             <span>Somewhere, NC 27809</span>
         </div> <!-- /.col-11 -->
-    </div> <!-- /.row -->
+    </div> <!-- /.row --> --}}
     <div class="row mb-4">
         <div class="col-1 my-auto">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -30,8 +30,8 @@
         <div class="col-11">
             <span class="font-weight-bold">Email Address</span><br />
             <span>
-                <a href="mailto:info@devotedtransportationllc.com">
-                    info@devotedtransportationllc.com
+                <a href="mailto:{{ env('MAIL_USERNAME') }}">
+                    {{ env('MAIL_USERNAME') }}
                 </a>
             </span>
         </div> <!-- /.col-11 -->
@@ -43,8 +43,8 @@
         <div class="col-11">
             <span class="font-weight-bold">Telephone Number</span><br />
             <span>
-                <a href="tel:+19191234567">
-                    (919) 123-4567
+                <a href="tel:+1{{ $envPhoneNumber }}">
+                    {{ $envPhoneNumberFmt }}
                 </a>
             </span>
         </div> <!-- /.col-11 -->
@@ -72,11 +72,11 @@
             <p class="lead">We are devoted to meeting your needs</p>
             <p>Give us a call or drop by anytime, we endeavour to answer all
                     enquiries within 24 hours on business days.</p>
-                <p>Email: <a href="mailto:info@devotedtransportationllc.com">
-                    info@devotedtransportationllc.com
+                <p>Email: <a href="mailto:{{ env('MAIL_USERNAME') }}">
+                    {{ env('MAIL_USERNAME') }}
                 </a></p>
-                <p>Phone: <a href="tel:+19191234567">
-                    (919) 123-4567
+                <p>Phone: <a href="tel:+1{{ $envPhoneNumber }}">
+                    {{ $envPhoneNumberFmt }}
                 </a>
                 </p>
                 <div class="bg-light-gray px-3 py-3">
