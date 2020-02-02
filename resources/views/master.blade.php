@@ -17,7 +17,7 @@
                     Call and schedule a pickup today
                 </a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 my-auto">
                 <img src="{{ asset( 'img/nemt-van.png' ) }}" class="img-fluid" alt="nemt-van" />
             </div>
 </div> <!-- /.row -->
