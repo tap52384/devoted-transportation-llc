@@ -13,7 +13,7 @@
                     elderly, individuals with disabilities, and transportation-disadvantaged populations,
                     we are available to get you where you need to go.
                 </p>
-                <a href="/contact-us" role="button" class="btn btn-light btn-lg btn-block">
+                <a href="/contact-us" role="button" class="btn btn-light btn-lg btn-block mb-2">
                     Call and schedule a pickup today
                 </a>
             </div>

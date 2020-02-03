@@ -30,7 +30,7 @@
         <div class="col-11">
             <span class="font-weight-bold">Email Address</span><br />
             <span>
-                <a href="mailto:{{ env('MAIL_USERNAME') }}">
+                <a href="mailto:{{ env('MAIL_USERNAME') }}" title="{{ env('MAIL_USERNAME') }}">
                     {{ env('MAIL_USERNAME') }}
                 </a>
             </span>

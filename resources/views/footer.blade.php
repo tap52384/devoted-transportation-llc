@@ -52,11 +52,6 @@
                               Services
                           </a>
                       </li>
-                      {{-- <li>
-                        <a href="/gallery" title="Gallery">
-                            Gallery
-                        </a>
-                    </li> --}}
                       <li>
                           <a href="/about-us" title="About Us">
                               About Us
