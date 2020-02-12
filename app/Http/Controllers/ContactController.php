@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\ContactSubmitted;
 use Carbon\Carbon;
+use Log;
 
 class ContactController extends Controller
 {
@@ -42,11 +43,19 @@ class ContactController extends Controller
         // Custom error messages for the form validator
         // https://laravel.com/docs/6.x/validation#custom-error-messages
         $messages = [
-            'resume_file.required' => 'Please upload your resume (Microsoft Word, PDF).',
-            'dob.required' => 'Date of birth must be given in format MM/DD/YYYY.'
+            'pickup_date.required' => 'Pickup date must be given in format MM/DD/YYYY.',
+            'return_date.required' => 'Return date must be given in format MM/DD/YYYY.',
         ];
 
+        // Accepted validation rules
+        // https://laravel.com/docs/6.x/validation#available-validation-rules
         $rules = [
+            'contact_first_name' => 'required',
+            'email' => 'email:rfc',
+            'pickup_date' => 'required|date_format:m/d/Y',
+            'pickup_time' => 'required|date_format:h:i A',
+            'return_date' => 'required|date_format:m/d/Y',
+            'return_time' => 'required|date_format:h:i A',
             'first_name' => 'required',
             'last_name' => 'required',
             // https://laravel.com/docs/6.x/validation#rule-email

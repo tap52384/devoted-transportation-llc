@@ -83,6 +83,8 @@
                     <h3 class="text-center mb-5">
                         Transportation Request Form
                     </h3>
+
+                    <!-- the contact form! -->
                     <form method="POST" id="transportation-request-form">
                         @csrf
                         <div class="form-row mb-3">
@@ -124,7 +126,8 @@
                                     </div>
                                     <input type="phone" class="form-control" placeholder="(___) ___-____"
                                     aria-label="contact_phone" aria-describedby="contact_phone_addon"
-                                    maxlength="14" id="contact_phone" name="contact_phone" value="{{ old('contact_phone') }}"/>
+                                    maxlength="14" id="contact_phone" name="contact_phone"
+                                    value="{{ old('contact_phone') }}" required />
                                   </div> <!-- /.input-group mb-3 -->
                             </div>
                             <div class="form-group col-md-6">
@@ -137,7 +140,8 @@
                                     </div>
                                     <input type="phone" class="form-control" placeholder="(___) ___-____"
                                     aria-label="passenger_phone" aria-describedby="passenger_phone_addon"
-                                    maxlength="14" id="passenger_phone" name="passenger_phone" value="{{ old('passenger_phone') }}" />
+                                    maxlength="14" id="passenger_phone" name="passenger_phone"
+                                    value="{{ old('passenger_phone') }}" />
                                   </div> <!-- /.input-group mb-3 -->
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row mb-3 -->
@@ -152,7 +156,8 @@
                                     </div>
                                     <input type="email" class="form-control"
                                     aria-label="email" aria-describedby="email_addon"
-                                    maxlength="255" id="email" name="email" value="{{ old('email') }}" />
+                                    maxlength="255" id="email" name="email" value="{{ old('email') }}"
+                                    required />
                                 </div> <!-- /.input-group mb-3 -->
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row mb-3 -->
@@ -160,7 +165,7 @@
                             <div class="form-group col-md-6">
                                 <label for="num_passengers">Number of Passengers</label>
                                 <input type="number" class="form-control" id="num_passengers" name="num_passengers"
-                                aria-describedby="num_passengers_help" min="1" value="{{ old('num_passengers') }}" required />
+                                aria-describedby="num_passengers_help" min="1" value="{{ old('num_passengers', 1) }}" required />
                                 <small id="num_passengers_help" class="form-text">Total number of passengers, including the one specified above.</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
@@ -185,7 +190,7 @@
                                     </div>
                                     <input type="text" class="form-control" placeholder="MM/DD/YYYY"
                                     aria-label="{{ $rideType }}date" aria-describedby="{{ $rideType }}date_addon"
-                                    maxlength="255" id="{{ $rideType }}date" name="{{ $rideType }}date" />
+                                    maxlength="255" id="{{ $rideType }}date" name="{{ $rideType }}date" required />
                                 </div> <!-- /.input-group mb-3 -->
                                 <label for="{{ $rideType }}time" class="col-form-label">{{ $value }} Time</label>
                                 <div class="input-group mb-3">
@@ -194,27 +199,31 @@
                                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                                         </span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="12:00"
+                                    <input type="text" class="form-control" placeholder="12:00 PM"
                                     aria-label="{{ $rideType }}time" aria-describedby="{{ $rideType }}time_addon"
-                                    maxlength="255" id="{{ $rideType }}time" name="{{ $rideType }}time" />
+                                    maxlength="255" id="{{ $rideType }}time" name="{{ $rideType }}time" required />
                                 </div> <!-- /.input-group mb-3 -->
                                 <label for="address_1">{{ strcasecmp($rideType, 'pickup_') === 0 ? $value : 'Destination' }} Address</label>
                                 <input type="text" class="form-control" id="{{ $rideType }}address_1" placeholder="Address 1"
-                                autocomplete="street-address" name="{{ $rideType }}address_1" value="{{ old($rideType . 'address_1') }}" />
-                                <input type="text" class="form-control" id="{{ $rideType }}address_2" name="{{ $rideType }}address_2" placeholder="Address 2"
+                                autocomplete="street-address" name="{{ $rideType }}address_1"
+                                value="{{ old($rideType . 'address_1') }}" required />
+                                <input type="text" class="form-control" id="{{ $rideType }}address_2"
+                                name="{{ $rideType }}address_2" placeholder="Address 2"
                                 autocomplete="address-line2" value="{{ old($rideType . 'address_2') }}" />
                                 <input type="text" class="form-control" id="{{ $rideType }}city"
                                 name="{{ $rideType }}city" autocomplete="address-level2" placeholder="City"
-                                value="{{ old($rideType . 'city') }}" />
-                                <select id="{{ $rideType }}state_id" name="{{ $rideType }}state_id" class="form-control" autocomplete="address-level1">
+                                value="{{ old($rideType . 'city') }}" required />
+                                <select id="{{ $rideType }}state_id" name="{{ $rideType }}state_id"
+                                class="form-control" autocomplete="address-level1" required>
                                     <option value="">State</option>
+                                    <option value="nc">NC</option>
                                     {{-- @foreach(App\State::all() as $state)
                                         <option value="{{ $state->id }}"
                                         @if(strcasecmp(old($rideType . 'state_id'), $state->id) === 0) selected @endif>{{ $state->name }}</option>
                                     @endforeach --}}
                                 </select>
                                 <input type="text" class="form-control" id="{{ $rideType }}zip" name="{{ $rideType }}zip" placeholder="Zip"
-                                value="{{ old($rideType . 'zip') }}" autocomplete="postal-code" />
+                                value="{{ old($rideType . 'zip') }}" autocomplete="postal-code" required />
                             </div> <!-- /.form-group .col-md-6 -->
                             @endforeach
                         </div> <!-- /.form-row mb-3 -->
