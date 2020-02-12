@@ -42,11 +42,17 @@ class ContactController extends Controller
     {
         Log::debug('About to validate the contact form!');
 
+        $input = $request->all();
+
         // Custom error messages for the form validator
         // https://laravel.com/docs/6.x/validation#custom-error-messages
         $messages = [
-            'pickup_date.required' => 'Pickup date must be given in format MM/DD/YYYY.',
-            'return_date.required' => 'Return date must be given in format MM/DD/YYYY.',
+            'pickup_date.date_format' => 'Pickup date must be given in format MM/DD/YYYY.',
+            'pickup_time.date_format' => 'Pickup time must be given in the format HH:MM AM/PM.',
+            'return_date.date_format' => 'Return date must be given in format MM/DD/YYYY.',
+            'return_time.date_format' => 'Please specify a return time in the format HH:MM AM/PM.',
+            'pickup_state' => 'Please select a state for your pickup address.',
+            'return_state' => 'Please select a state for your destination address.'
         ];
 
         // Accepted validation rules
@@ -54,28 +60,29 @@ class ContactController extends Controller
         $rules = [
             'contact_first_name' => 'required|max:50',
             'contact_last_name' => 'required|max:50',
-            'contact_phone' => 'required',
-            'email' => 'email:rfc',
+            'contact_phone' => 'required|numeric',
+            // https://laravel.com/docs/6.x/validation#rule-email
+            'email' => 'required|email:rfc',
             'num_passengers' => 'required|numeric',
             'passenger_first_name' => 'required',
             'passenger_last_name' => 'required',
-            'passenger_phone' => 'required',
+            'passenger_phone' => 'required|numeric',
+
             'pickup_address_1' => 'required',
             'pickup_city' => 'required',
-            'pickup_date' => 'required|date_format:m/d/Y',
+            'pickup_date' => 'required|date_format:m/d/Y|after_or_equal:today',
+            'pickup_state' => 'required|numeric',
             'pickup_time' => 'required|date_format:h:i A',
-            'return_date' => 'required|date_format:m/d/Y',
+            'pickup_zip' => 'required|numeric',
+
+            'return_address_1' => 'required',
+            'return_city' => 'required',
+            'return_date' => 'required|date_format:m/d/Y|after_or_equal:pickup_date',
+            'return_state' => 'required|numeric',
             'return_time' => 'required|date_format:h:i A',
-            'trip_purpose' => 'required|max:4000',
-            'first_name' => 'required',
-            'last_name' => 'required',
-            // https://laravel.com/docs/6.x/validation#rule-email
-            'email' => 'required|email:rfc',
-            'phone' => 'required|numeric',
-            'vehicle_year' => 'required|numeric',
-            'vehicle_make' => 'required',
-            'vehicle_model' => 'required',
-            'message' => 'required'
+            'return_zip' => 'required|numeric',
+
+            'trip_purpose' => 'required|max:4000'
         ];
 
         Log::debug('Passed validation for contact form!');
@@ -88,16 +95,23 @@ class ContactController extends Controller
         );
 
         if ($validator->fails()) {
-            return redirect('/contact-us')
+            return redirect('/contact-us#form-errors')
                         ->withErrors($validator)
                         ->withInput();
         }
 
         Log::debug('Passed validation for contact form!');
 
+        // cleans up the data for pushing to the DB
+        $input = $request->all();
+        $input['pickup_date'] .= ' ' . $input['pickup_time'];
+        $input['return_date'] .= ' ' . $input['return_time'];
+        unset($input['pickup_time']);
+        unset($input['return_time']);
+
         $contact = new Contact();
-        foreach ($rules as $key => $value) {
-            $contact->$key = $request->input($key);
+        foreach ($input as $key => $value) {
+            $contact->$key = $input[$key];
         }
         $contact->save();
         $mail = new ContactSubmitted($contact);

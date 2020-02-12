@@ -10,6 +10,8 @@
     ]
 )
 
+{{-- if no contact form has been successfully submitted, then show it --}}
+@empty($contact)
 <div class="contact-info-list container">
     <div class="separator-style-2 mb-3"></div>
     <p class="lead">We would love to hear from you</p>
@@ -80,9 +82,21 @@
                 </a>
                 </p>
                 <div class="bg-light-gray px-3 py-3">
+                    <a href="#" id="form-errors" title="form-errors" class="mt-3"></a>
                     <h3 class="text-center mb-5">
                         Transportation Request Form
                     </h3>
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <h3>The following errors were encountered:</h3>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <!-- the contact form! -->
                     <form method="POST" id="transportation-request-form">
@@ -96,7 +110,7 @@
                                 <small id="contact_first_name_help" class="form-text">Please enter the name of the person completing this form</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
-                                <label for="last_name">Point of Contact Last Name</label>
+                                <label for="contact_last_name">Point of Contact Last Name</label>
                                 <input type="text" class="form-control" id="contact_last_name" name="contact_last_name"
                                 aria-describedby="contact_last_name_help" autocomplete="family-name" required
                                 value="{{ old('contact_last_name') }}" />
@@ -128,7 +142,7 @@
                                         <i class="fa fa-phone" aria-hidden="true"></i>
                                       </span>
                                     </div>
-                                    <input type="phone" class="form-control" placeholder="(___) ___-____"
+                                    <input type="number" class="form-control" placeholder="(___) ___-____"
                                     aria-label="contact_phone" aria-describedby="contact_phone_addon"
                                     maxlength="14" id="contact_phone" name="contact_phone"
                                     value="{{ old('contact_phone') }}" required />
@@ -142,7 +156,7 @@
                                         <i class="fa fa-phone" aria-hidden="true"></i>
                                       </span>
                                     </div>
-                                    <input type="phone" class="form-control" placeholder="(___) ___-____"
+                                    <input type="number" class="form-control" placeholder="(___) ___-____"
                                     aria-label="passenger_phone" aria-describedby="passenger_phone_addon"
                                     maxlength="14" id="passenger_phone" name="passenger_phone"
                                     value="{{ old('passenger_phone') }}" />
@@ -194,7 +208,8 @@
                                     </div>
                                     <input type="text" class="form-control" placeholder="MM/DD/YYYY"
                                     aria-label="{{ $rideType }}date" aria-describedby="{{ $rideType }}date_addon"
-                                    maxlength="255" id="{{ $rideType }}date" name="{{ $rideType }}date" required />
+                                    maxlength="255" id="{{ $rideType }}date" name="{{ $rideType }}date" required
+                                    value="{{ old($rideType . 'date') }}" />
                                 </div> <!-- /.input-group mb-3 -->
                                 <label for="{{ $rideType }}time" class="col-form-label">{{ $value }} Time</label>
                                 <div class="input-group mb-3">
@@ -205,7 +220,8 @@
                                     </div>
                                     <input type="text" class="form-control" placeholder="12:00 PM"
                                     aria-label="{{ $rideType }}time" aria-describedby="{{ $rideType }}time_addon"
-                                    maxlength="255" id="{{ $rideType }}time" name="{{ $rideType }}time" required />
+                                    maxlength="255" id="{{ $rideType }}time" name="{{ $rideType }}time" required
+                                    value="{{ old($rideType . 'time') }}" />
                                 </div> <!-- /.input-group mb-3 -->
                                 <label for="{{ $rideType }}address_1">{{ strcasecmp($rideType, 'pickup_') === 0 ? $value : 'Destination' }} Address</label>
                                 <input type="text" class="form-control" id="{{ $rideType }}address_1" placeholder="Address 1"
@@ -217,13 +233,13 @@
                                 <input type="text" class="form-control" id="{{ $rideType }}city"
                                 name="{{ $rideType }}city" autocomplete="address-level2" placeholder="City"
                                 value="{{ old($rideType . 'city') }}" required />
-                                <select id="{{ $rideType }}state_id" name="{{ $rideType }}state_id"
+                                <select id="{{ $rideType }}state" name="{{ $rideType }}state"
                                 class="form-control" autocomplete="address-level1" required>
                                     <option value="">State</option>
-                                    <option value="nc">NC</option>
+                                    <option value="0">NC</option>
                                     {{-- @foreach(App\State::all() as $state)
                                         <option value="{{ $state->id }}"
-                                        @if(strcasecmp(old($rideType . 'state_id'), $state->id) === 0) selected @endif>{{ $state->name }}</option>
+                                        @if(strcasecmp(old($rideType . 'state'), $state->id) === 0) selected @endif>{{ $state->name }}</option>
                                     @endforeach --}}
                                 </select>
                                 <input type="text" class="form-control" id="{{ $rideType }}zip" name="{{ $rideType }}zip" placeholder="Zip"
@@ -238,6 +254,11 @@
                 </div> <!-- /.bg-light-gray -->
     </div>
 </div>
+@else
+<div class="container mt-3 mb-5">
+    @include('emails.contactcontent')
+</div>
+@endempty
 
 
 @endsection
