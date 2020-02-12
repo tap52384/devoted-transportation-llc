@@ -91,13 +91,15 @@
                             <div class="form-group col-md-6">
                                 <label for="contact_first_name">Point of Contact First Name</label>
                                 <input type="text" class="form-control" id="contact_first_name" name="contact_first_name"
-                                aria-describedby="contact_first_name_help" autocomplete="given-name" required />
+                                aria-describedby="contact_first_name_help" autocomplete="given-name" required
+                                value="{{ old('contact_first_name') }}" />
                                 <small id="contact_first_name_help" class="form-text">Please enter the name of the person completing this form</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
                                 <label for="last_name">Point of Contact Last Name</label>
-                                <input type="text" class="form-control" id="last_name" name="last_name"
-                                aria-describedby="contact_last_name_help" autocomplete="family-name" required />
+                                <input type="text" class="form-control" id="contact_last_name" name="contact_last_name"
+                                aria-describedby="contact_last_name_help" autocomplete="family-name" required
+                                value="{{ old('contact_last_name') }}" />
                                 <small id="contact_last_name_help" class="form-text">Last name of the person completing this form</small>
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row -->
@@ -105,13 +107,15 @@
                             <div class="form-group col-md-6">
                                 <label for="passenger_first_name">Passenger First Name</label>
                                 <input type="text" class="form-control" id="passenger_first_name" name="passenger_first_name"
-                                aria-describedby="passenger_first_name_help" autocomplete="given-name" required />
+                                aria-describedby="passenger_first_name_help" autocomplete="given-name" required
+                                value="{{ old('passenger_first_name') }}" />
                                 <small id="passenger_first_name_help" class="form-text">First name of the passenger</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
                                 <label for="passenger_last_name" class="col-form-label">Passenger Last Name</label>
                                 <input type="text" class="form-control" id="passenger_last_name" name="passenger_last_name"
-                                aria-describedby="passenger_last_name_help" autocomplete="family-name" required />
+                                aria-describedby="passenger_last_name_help" autocomplete="family-name" required
+                                value="{{ old('passenger_last_name') }}" />
                                 <small id="passenger_last_name_help" class="form-text">Last name of the passenger</small>
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row -->
@@ -203,7 +207,7 @@
                                     aria-label="{{ $rideType }}time" aria-describedby="{{ $rideType }}time_addon"
                                     maxlength="255" id="{{ $rideType }}time" name="{{ $rideType }}time" required />
                                 </div> <!-- /.input-group mb-3 -->
-                                <label for="address_1">{{ strcasecmp($rideType, 'pickup_') === 0 ? $value : 'Destination' }} Address</label>
+                                <label for="{{ $rideType }}address_1">{{ strcasecmp($rideType, 'pickup_') === 0 ? $value : 'Destination' }} Address</label>
                                 <input type="text" class="form-control" id="{{ $rideType }}address_1" placeholder="Address 1"
                                 autocomplete="street-address" name="{{ $rideType }}address_1"
                                 value="{{ old($rideType . 'address_1') }}" required />

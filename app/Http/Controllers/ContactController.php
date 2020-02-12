@@ -40,6 +40,8 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        Log::debug('About to validate the contact form!');
+
         // Custom error messages for the form validator
         // https://laravel.com/docs/6.x/validation#custom-error-messages
         $messages = [
@@ -50,12 +52,21 @@ class ContactController extends Controller
         // Accepted validation rules
         // https://laravel.com/docs/6.x/validation#available-validation-rules
         $rules = [
-            'contact_first_name' => 'required',
+            'contact_first_name' => 'required|max:50',
+            'contact_last_name' => 'required|max:50',
+            'contact_phone' => 'required',
             'email' => 'email:rfc',
+            'num_passengers' => 'required|numeric',
+            'passenger_first_name' => 'required',
+            'passenger_last_name' => 'required',
+            'passenger_phone' => 'required',
+            'pickup_address_1' => 'required',
+            'pickup_city' => 'required',
             'pickup_date' => 'required|date_format:m/d/Y',
             'pickup_time' => 'required|date_format:h:i A',
             'return_date' => 'required|date_format:m/d/Y',
             'return_time' => 'required|date_format:h:i A',
+            'trip_purpose' => 'required|max:4000',
             'first_name' => 'required',
             'last_name' => 'required',
             // https://laravel.com/docs/6.x/validation#rule-email
@@ -66,6 +77,8 @@ class ContactController extends Controller
             'vehicle_model' => 'required',
             'message' => 'required'
         ];
+
+        Log::debug('Passed validation for contact form!');
 
         // https://laravel.com/docs/6.x/validation#quick-writing-the-validation-logic
         $validator = Validator::make(
