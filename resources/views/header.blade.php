@@ -39,18 +39,9 @@
     <div class="bg-dark collapse" id="navbarHeader">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-          </div>
-          <div class="col-sm-4 offset-md-1 py-4">
-            <h4 class="text-white">Contact</h4>
+          <div class="col-sm-8 col-md-7 py-2">
+            <h4 class="text-white">Site Links</h4>
             <ul class="list-unstyled">
-                <li>
-                    <a href="/services" title="Services">
-                        Services
-                    </a>
-                </li>
                 <li>
                     <a href="/about-us" title="About Us">
                         About Us
@@ -73,7 +64,7 @@
     </div>
     <div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
       <div class="container d-flex justify-content-between pl-0">
-        <a href="/" class="navbar-brand d-flex align-items-center mr-0">
+        <a href="/" class="navbar-brand d-flex align-items-center mr-0 py-0">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px" y="0px" viewBox="0 0 8100 3690" preserveAspectRatio="xMidYMid meet">
             <g id="layer102">

@@ -33,8 +33,11 @@ body {
     height: 4rem;
 }
 
-header div.collapse .container {
-    padding-top: 4rem;
+header div.collapse {
+    position: fixed;
+    top: 4rem;
+    z-index: 1030;
+    width: 100%;
 }
 
 .navbar-hide {

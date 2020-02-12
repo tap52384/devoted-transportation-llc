@@ -124,7 +124,7 @@
                                     </div>
                                     <input type="phone" class="form-control" placeholder="(___) ___-____"
                                     aria-label="contact_phone" aria-describedby="contact_phone_addon"
-                                    maxlength="14" id="contact_phone" name="contact_phone" />
+                                    maxlength="14" id="contact_phone" name="contact_phone" value="{{ old('contact_phone') }}"/>
                                   </div> <!-- /.input-group mb-3 -->
                             </div>
                             <div class="form-group col-md-6">
@@ -137,7 +137,7 @@
                                     </div>
                                     <input type="phone" class="form-control" placeholder="(___) ___-____"
                                     aria-label="passenger_phone" aria-describedby="passenger_phone_addon"
-                                    maxlength="14" id="passenger_phone" name="passenger_phone" />
+                                    maxlength="14" id="passenger_phone" name="passenger_phone" value="{{ old('passenger_phone') }}" />
                                   </div> <!-- /.input-group mb-3 -->
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row mb-3 -->
@@ -152,7 +152,7 @@
                                     </div>
                                     <input type="email" class="form-control"
                                     aria-label="email" aria-describedby="email_addon"
-                                    maxlength="255" id="email" name="email" />
+                                    maxlength="255" id="email" name="email" value="{{ old('email') }}" />
                                 </div> <!-- /.input-group mb-3 -->
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row mb-3 -->
@@ -160,13 +160,13 @@
                             <div class="form-group col-md-6">
                                 <label for="num_passengers">Number of Passengers</label>
                                 <input type="number" class="form-control" id="num_passengers" name="num_passengers"
-                                aria-describedby="num_passengers_help" required />
+                                aria-describedby="num_passengers_help" min="1" value="{{ old('num_passengers') }}" required />
                                 <small id="num_passengers_help" class="form-text">Total number of passengers, including the one specified above.</small>
                             </div> <!-- /.col -->
                             <div class="form-group col-md-6">
                                 <label for="trip_purpose">Purpose of Trip</label>
                                 <input type="text" class="form-control" id="trip_purpose" name="trip_purpose"
-                                required />
+                                value="{{ old('trip_purpose') }}" required />
                             </div> <!-- /.col -->
                         </div> <!-- /.form-row mb-3 -->
                         <div class="form-row mb-3">

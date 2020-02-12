@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('master'); // return view('welcome');
 });
 
-Route::get('/contact-us', function () {
-    return view('contactus');
-});
+Route::get('/contact-us', 'ContactController@create')->name('contact');
+
+Route::post('/contact-us', 'ContactController@store');
 
 Route::get('/about-us', function () {
     return view('aboutus');
@@ -25,4 +25,8 @@ Route::get('/about-us', function () {
 
 Route::get('/faq', function () {
     return view('faq');
+});
+
+Route::get('/emails/contact-us', function() {
+    return new App\Mail\ContactSubmitted(new App\Contact());
 });

@@ -48,11 +48,6 @@
                   <p class="font-weight-bold">Site Links</p>
                   <ul class="list-unstyled">
                       <li>
-                          <a href="/services" title="Services">
-                              Services
-                          </a>
-                      </li>
-                      <li>
                           <a href="/about-us" title="About Us">
                               About Us
                           </a>
