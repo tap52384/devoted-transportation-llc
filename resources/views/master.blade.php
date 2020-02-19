@@ -112,7 +112,7 @@ transportation.
     <!-- <iframe width="792" height="446" src="https://www.youtube.com/embed/Bey4XXJAqS8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 </section>
 
-<section class="home-trip-promo my-4 py-5">
+<section class="home-trip-promo mt-4 py-5">
     <div class="container py-3">
             <p class="font-weight-bold text-uppercase">New PROMO</p>
             <h1 class="text-center mb-3">Want take a vacation but need transportation? Now you can!</h1>
