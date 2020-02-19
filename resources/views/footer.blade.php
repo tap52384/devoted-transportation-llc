@@ -47,6 +47,11 @@
               <div class="col-md-6 text-center text-md-left">
                   <p class="font-weight-bold">Site Links</p>
                   <ul class="list-unstyled">
+                    <li>
+                        <a href="/" title="Home">
+                            Home
+                        </a>
+                    </li>
                       <li>
                           <a href="/about-us" title="About Us">
                               About Us

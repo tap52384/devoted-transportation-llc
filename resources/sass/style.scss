@@ -25,7 +25,7 @@ body {
 }
 
 .navbar-brand svg g path, svg.footer-logo g path {
-    fill: #ca614b;
+    fill: $theme-color-logo;
 }
 
 .navbar {
@@ -223,4 +223,12 @@ blockquote.blue:before {
     top: -2rem;
     color: $theme-color-three;
     text-decoration: none;
+}
+
+.home-trip-promo {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/long-road.jpg);
+    background-size: cover;
+    color: #fff;
+    min-height: 12em;
+    text-align: center;
 }

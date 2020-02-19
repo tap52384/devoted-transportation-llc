@@ -53,6 +53,19 @@
             <p class="lead font-weight-bold">Do you have oxygen tanks in your vehicles?</p>
             <p>No, we do not carry any oxygen in our vehicles.</p>
         </li>
+        <li>
+            <p class="lead font-weight-bold">Do you provide transportation for vacations?</p>
+            <p>Devoted Transportation also offers small group travel along the
+            North Carolina east coast. You are able to choose exactly where you
+            want to go and what to do. Plan your itinerary and leave the travel
+            to us. For bigger groups, we would need information 4 months or more
+            to plan accordingly.</p>
+            <p>To schedule your trip, please call us at at
+                <a href="tel:+1{{ $envPhoneNumber }}" title="{{ $envPhoneNumberFmt }}">
+                {{ $envPhoneNumberFmt }}
+                </a>.
+            </p>
+        </li>
     </ul>
 </section>
 

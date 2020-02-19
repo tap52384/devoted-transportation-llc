@@ -43,6 +43,11 @@
             <h4 class="text-white">Site Links</h4>
             <ul class="list-unstyled">
                 <li>
+                    <a href="/" title="Home">
+                        Home
+                    </a>
+                </li>
+                <li>
                     <a href="/about-us" title="About Us">
                         About Us
                     </a>
