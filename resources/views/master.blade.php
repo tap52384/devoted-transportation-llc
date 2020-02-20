@@ -115,7 +115,7 @@ transportation.
 <section class="home-trip-promo mt-4 py-5">
     <div class="container py-3">
             <p class="font-weight-bold text-uppercase">New PROMO</p>
-            <h1 class="text-center mb-3">Want take a vacation but need transportation? Now you can!</h1>
+            <h1 class="text-center mb-3">Need a vacation? Need transportation? Now you can!</h1>
             <p class="mb-3">We are pleased to introduce a new service to our
                 lineup--vacation trip planning! Planning a vacation now just got
                 a lot easier.
