@@ -72,14 +72,15 @@ class ContactController extends Controller
             'pickup_city' => 'required',
             'pickup_date' => 'required|date_format:m/d/Y|after_or_equal:today',
             'pickup_state' => 'required|numeric',
-            'pickup_time' => 'required|date_format:h:i A',
+            // https://www.php.net/manual/en/function.date.php
+            'pickup_time' => 'required|date_format:g:i A',
             'pickup_zip' => 'required|numeric',
 
             'return_address_1' => 'required',
             'return_city' => 'required',
             'return_date' => 'required|date_format:m/d/Y|after_or_equal:pickup_date',
             'return_state' => 'required|numeric',
-            'return_time' => 'required|date_format:h:i A',
+            'return_time' => 'required|date_format:g:i A',
             'return_zip' => 'required|numeric',
 
             'trip_purpose' => 'required|max:4000'
