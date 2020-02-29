@@ -40,7 +40,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-2">
-            <h4 class="text-white">Menu</h4>
+            <h4 class="text-white"></h4>
             <ul class="list-unstyled">
                 <li>
                     <a href="/" title="Home">
@@ -83,6 +83,7 @@
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
+          <span>Menu</span>
         </button>
       </div>
     </div>
