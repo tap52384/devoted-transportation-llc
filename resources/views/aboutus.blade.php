@@ -17,9 +17,10 @@
         Devoted Transportation is a healthcare and transportation management
         company whose mission is to partner with clients in developing innovative solutions for
         accessing healthcare, increasing independence, and connecting community
-        resources in the most cost-effective manner. To achieve this, we
+        resources in the most cost-effective manner.
+        {{-- To achieve this, we
         leverage our core competencies in managing customer service operations
-        and building provider networks.
+        and building provider networks. --}}
     </p>
 </div>
 
@@ -29,7 +30,9 @@
         <div class="col-md-6">
             <blockquote class="blue">
                 <p>
-                    MTM staff are always well informed, willing to listen and learn about local concerns, and tireless in seeking the most appropriate solution.
+                    Devoted Transportation staff are always well informed,
+                    willing to listen and learn about local concerns, and
+                    tireless in seeking the most appropriate solution.
                     <br />
                     <cite class="font-weight-bold">
                         Happy Customer, Senior Citizen
@@ -40,7 +43,9 @@
         <div class="col-md-6">
             <blockquote class="blue">
                 <p>
-                    MTM staff are always well informed, willing to listen and learn about local concerns, and tireless in seeking the most appropriate solution.
+                    Devoted Transportation is the best! They were on-time,
+                    patient, and made going to my appointment a breeze. I will
+                    definitely be calling them again!
                     <br />
                     <cite class="font-weight-bold">
                         Happy Customer, Senior Citizen
