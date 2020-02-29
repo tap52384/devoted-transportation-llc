@@ -45,7 +45,7 @@
 
               </div> <!-- /.col-md-3 -->
               <div class="col-md-6 text-center text-md-left">
-                  <p class="font-weight-bold">Site Links</p>
+                  <p class="font-weight-bold">Menu</p>
                   <ul class="list-unstyled">
                     <li>
                         <a href="/" title="Home">

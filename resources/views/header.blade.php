@@ -40,7 +40,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-2">
-            <h4 class="text-white">Site Links</h4>
+            <h4 class="text-white">Menu</h4>
             <ul class="list-unstyled">
                 <li>
                     <a href="/" title="Home">
