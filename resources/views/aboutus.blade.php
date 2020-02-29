@@ -14,8 +14,8 @@
 <div class="container my-5">
     <h1>Our Mission</h1>
     <p>
-        MTM is a healthcare and transportation management company whose mission
-        is to partner with clients in developing innovative solutions for
+        Devoted Transportation is a healthcare and transportation management
+        company whose mission is to partner with clients in developing innovative solutions for
         accessing healthcare, increasing independence, and connecting community
         resources in the most cost-effective manner. To achieve this, we
         leverage our core competencies in managing customer service operations
