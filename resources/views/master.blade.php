@@ -30,18 +30,18 @@
         <h1 class="text-center mt-4">What is Non-Emergency Medical Transportation (NEMT)?</h1>
         <p>
         Medicaid non-emergency medical transportation (NEMT) is an important benefit
-for beneficiaries who need to get to and from medical services but have no means of
+for those who need to get to and from medical services but have no means of
 transportation.
         </p>
         <p>
-        Patients may require NEMT for a variety of reasons, including: lack of a
+        People may require NEMT for a variety of reasons, including: lack of a
         valid driver’s license, lack of a working vehicle, geographic isolation,
         or the inability to take traditional transportation for physical, mental,
         or developmental reasons.
         </p>
         <p>
-        Devoted Transportation is an NEMT company whose mission is to deliver
-        the highest customer services to our clients throughout Durham and the
+        Devoted Transportation is a NEMT company whose mission is to deliver
+        the highest customer service to our clients throughout Raleigh and the
         surrounding areas.
         </p>
         <div class="text-center">

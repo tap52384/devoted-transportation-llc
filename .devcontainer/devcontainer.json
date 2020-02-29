@@ -37,7 +37,7 @@
     "runArgs": [
         "--name=devoted",
         "-e USER=$(whoami)",
-        "--hostname=$(hostname)",
+        // "--hostname=$(hostname)",
         "--env-file=${localWorkspaceFolder}/.env"
     ],
 
