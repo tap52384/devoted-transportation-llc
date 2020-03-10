@@ -235,12 +235,11 @@
                                 value="{{ old($rideType . 'city') }}" required />
                                 <select id="{{ $rideType }}state" name="{{ $rideType }}state"
                                 class="form-control" autocomplete="address-level1" required>
-                                    <option value="">State</option>
-                                    <option value="0">NC</option>
-                                    {{-- @foreach(App\State::all() as $state)
+                                <option value="">Choose...</option>
+                                    @foreach(App\State::all() as $state)
                                         <option value="{{ $state->id }}"
                                         @if(strcasecmp(old($rideType . 'state'), $state->id) === 0) selected @endif>{{ $state->name }}</option>
-                                    @endforeach --}}
+                                    @endforeach
                                 </select>
                                 <input type="text" class="form-control" id="{{ $rideType }}zip" name="{{ $rideType }}zip" placeholder="Zip"
                                 value="{{ old($rideType . 'zip') }}" autocomplete="postal-code" required />

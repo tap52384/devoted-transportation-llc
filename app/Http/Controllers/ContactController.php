@@ -103,7 +103,7 @@ class ContactController extends Controller
 
         Log::debug('Passed validation for contact form!');
 
-        // cleans up the data for pushing to the DB
+        // cleans up the date/time data for pushing to the DB
         $input = $request->all();
         $input['pickup_date'] .= ' ' . $input['pickup_time'];
         $input['return_date'] .= ' ' . $input['return_time'];
@@ -111,7 +111,14 @@ class ContactController extends Controller
         unset($input['return_time']);
 
         $contact = new Contact();
+        $skip_inputs = [
+            '_token',
+            'contact_submit'
+        ];
         foreach ($input as $key => $value) {
+            if (in_array($key, $skip_inputs, true) === true) {
+                continue;
+            }
             $contact->$key = $input[$key];
         }
         $contact->save();

@@ -206,6 +206,21 @@ ADD FOREIGN KEY fk_employments_states_state_id(state_id)
 REFERENCES states(ID) ON DELETE CASCADE;
 ```
 
+## Create "states" table in MySQL
+
+```sql
+CREATE TABLE `states` (
+ `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+ `initial` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+ `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+
+```
+
 ## How to update site on GoDaddy with latest code
 
 ```bash
