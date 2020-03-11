@@ -122,10 +122,19 @@ class ContactController extends Controller
             $contact->$key = $input[$key];
         }
         $contact->save();
+
+        Log::debug('Saved the contact form data to the database.');
+        Log::debug('To address: ' . $request->input('email'));
+        Log::debug('MAIL_USERNAME: ' . env('MAIL_USERNAME') . "\n" .
+        'MAIL_BCC_RECIPIENTS: ' . env('MAIL_BCC_RECIPIENTS') . "\n" .
+        'MAIL_PORT: ' . env('MAIL_PORT') . "\n" .
+        'MAIL_FROM_ADDRESS: ' . env('MAIL_FROM_ADDRESS') . "\n" .
+        'MAIL_ENCRYPTION: ' . env('MAIL_DRIVER'));
+
         $mail = new ContactSubmitted($contact);
         Mail::to($request->input('email'))
-        ->bcc(env('MAIL_USERNAME'))
-        ->bcc(explode(',', env('MAIL_BCC_RECIPIENTS')))
+        ->bcc(env('MAIL_USERNAME', ''))
+        // ->bcc(explode(',', env('MAIL_BCC_RECIPIENTS')))
         ->send($mail);
 
         return $this->show($contact);

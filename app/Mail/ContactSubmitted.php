@@ -23,6 +23,10 @@ class ContactSubmitted extends Mailable
     public function __construct(Contact $contact)
     {
         $this->contact = $contact;
+        $this->contact->contact_phone_fmt =
+        preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $this->contact->contact_phone);
+        $this->contact->passenger_phone_fmt =
+        preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $this->contact->passenger_phone);
     }
 
     /**

@@ -234,3 +234,11 @@ blockquote.blue:before {
     min-height: 16em;
     text-align: center;
 }
+
+// https://webdesign.tutsplus.com/articles/quick-tip-make-telephone-numbers-do-something--webdesign-9271
+// Phone logo before icon
+a[href^="tel:"]:before {
+    content: "\260E";
+    display: block;
+    margin-right: 0.5em;
+}

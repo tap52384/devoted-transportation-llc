@@ -310,3 +310,4 @@ __GoDaddy__.
 
 To style an SVG, it's best to include it inline.
 Make sure the SVG has primitives (rect, circle, path) included.
+- Also, make sure to [validate your SVG](https://validator.w3.org/)

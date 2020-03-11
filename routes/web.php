@@ -28,5 +28,5 @@ Route::get('/faq', function () {
 });
 
 Route::get('/emails/contact-us', function() {
-    return new App\Mail\ContactSubmitted(new App\Contact());
+    return new App\Mail\ContactSubmitted(App\Contact::find(1));
 });
