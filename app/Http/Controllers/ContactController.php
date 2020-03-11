@@ -60,13 +60,14 @@ class ContactController extends Controller
         $rules = [
             'contact_first_name' => 'required|max:50',
             'contact_last_name' => 'required|max:50',
-            'contact_phone' => 'required|numeric',
+            // https://laravel.com/docs/6.x/validation#rule-digits-between
+            'contact_phone' => 'required|digits_between:10,14',
             // https://laravel.com/docs/6.x/validation#rule-email
             'email' => 'required|email:rfc',
             'num_passengers' => 'required|numeric',
             'passenger_first_name' => 'required',
             'passenger_last_name' => 'required',
-            'passenger_phone' => 'required|numeric',
+            'passenger_phone' => 'required|digits_between:10,14',
 
             'pickup_address_1' => 'required',
             'pickup_city' => 'required',

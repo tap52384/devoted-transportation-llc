@@ -1,6 +1,6 @@
 <div class="container">
 <footer class="pt-3 pb-3 text-center argyle">
-    <p>Copyright &copy; 2019-{{ date('Y') }} Devoted Transportation LLC. All Rights Reserved
+    <p class="text-center">Copyright &copy; 2019-{{ date('Y') }} Devoted Transportation LLC. All Rights Reserved
     </p>
     <ul class="list-inline ml-2 social-links">
         <li class="list-inline-item mr-2">

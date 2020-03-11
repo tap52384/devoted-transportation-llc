@@ -144,7 +144,7 @@
                                     </div>
                                     <input type="number" class="form-control" placeholder="(___) ___-____"
                                     aria-label="contact_phone" aria-describedby="contact_phone_addon"
-                                    maxlength="14" id="contact_phone" name="contact_phone"
+                                    id="contact_phone" name="contact_phone"
                                     value="{{ old('contact_phone') }}" required />
                                   </div> <!-- /.input-group mb-3 -->
                             </div>
@@ -158,7 +158,7 @@
                                     </div>
                                     <input type="number" class="form-control" placeholder="(___) ___-____"
                                     aria-label="passenger_phone" aria-describedby="passenger_phone_addon"
-                                    maxlength="14" id="passenger_phone" name="passenger_phone"
+                                    id="passenger_phone" name="passenger_phone"
                                     value="{{ old('passenger_phone') }}" />
                                   </div> <!-- /.input-group mb-3 -->
                             </div> <!-- /.col -->
@@ -225,7 +225,7 @@
                                 </div> <!-- /.input-group mb-3 -->
                                 <label for="{{ $rideType }}address_1">{{ strcasecmp($rideType, 'pickup_') === 0 ? $value : 'Destination' }} Address</label>
                                 <input type="text" class="form-control" id="{{ $rideType }}address_1" placeholder="Address 1"
-                                autocomplete="street-address" name="{{ $rideType }}address_1"
+                                autocomplete="address-line1" name="{{ $rideType }}address_1"
                                 value="{{ old($rideType . 'address_1') }}" required />
                                 <input type="text" class="form-control" id="{{ $rideType }}address_2"
                                 name="{{ $rideType }}address_2" placeholder="Address 2"

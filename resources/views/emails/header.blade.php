@@ -22,7 +22,7 @@
             }
 
             .argyle {
-                background-color: var(--theme-color-one);
+                background-color: #011f4b!important;
                 color: #fff;
                 /* argyle pattern - https://leaverou.github.io/css3patterns/#argyle */
                 /* background-image:
@@ -156,14 +156,14 @@
             }
 
             h1 {
-                background-color: var(--main-bg-color);
+                background-color: #343a40;
                 padding: 5px;
                 color: #fff;
             }
 
             .email-header {
                 background-color: #993333;
-                background-color: var(--main-bg-color);
+                background-color: #343a40;
                 color: #fff;
                 padding: 1rem 0;
             }
@@ -217,7 +217,7 @@
             }
 
             footer {
-                background-color: var(--main-bg-color);
+                background-color: #343a40;
                 color: #fff;
                 margin-top: 2rem;
                 display: block;
