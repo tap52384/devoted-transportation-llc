@@ -314,3 +314,5 @@ Make sure the SVG has primitives (rect, circle, path) included.
 
 ## TODOs
 - Get social media accounts links
+- Fix footer color in email to match header
+- Center social media links in email
