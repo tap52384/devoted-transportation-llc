@@ -237,8 +237,10 @@
                                 class="form-control" autocomplete="address-level1" required>
                                 <option value="">Choose...</option>
                                     @foreach(App\State::all() as $state)
+                                        {{-- Defaults to NC for now --}}
                                         <option value="{{ $state->id }}"
-                                        @if(strcasecmp(old($rideType . 'state'), $state->id) === 0) selected @endif>{{ $state->name }}</option>
+                                        @if(strcasecmp(old($rideType . 'state'), $state->id) === 0 ||
+                                        strcasecmp($state->initial, 'NC') === 0) selected @endif>{{ $state->name }}</option>
                                     @endforeach
                                 </select>
                                 <input type="text" class="form-control" id="{{ $rideType }}zip" name="{{ $rideType }}zip" placeholder="Zip"

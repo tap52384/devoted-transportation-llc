@@ -56,6 +56,9 @@ docker run \
 -v "$app_folder":/opt/app-root/src/ \
 tap52384:devoted
 
+# How to possibly set the timezone in Docker (needs root)
+# https://access.redhat.com/solutions/1350193
+
 # Install Composer packages
 docker exec -it devoted bash -c 'curl -sS https://getcomposer.org/installer | php && php composer.phar install'
 # Install NPM, loads NPM, and Composer NPM packages

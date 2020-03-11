@@ -70,7 +70,9 @@ class ContactController extends Controller
 
             'pickup_address_1' => 'required',
             'pickup_city' => 'required',
-            'pickup_date' => 'required|date_format:m/d/Y|after_or_equal:today',
+            // Relative date/time formats supported by PHP's strtotime()
+            // https://www.php.net/manual/en/datetime.formats.relative.php
+            'pickup_date' => 'required|date|date_format:m/d/Y|after_or_equal:today',
             'pickup_state' => 'required|numeric',
             // https://www.php.net/manual/en/function.date.php
             'pickup_time' => 'required|date_format:g:i A',
@@ -85,8 +87,6 @@ class ContactController extends Controller
 
             'trip_purpose' => 'required|max:4000'
         ];
-
-        Log::debug('Passed validation for contact form!');
 
         // https://laravel.com/docs/6.x/validation#quick-writing-the-validation-logic
         $validator = Validator::make(
