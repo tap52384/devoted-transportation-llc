@@ -10,42 +10,13 @@
 <table class="table">
     <tbody>
         <tr>
-            <th scope="row">Name</td>
+            <th scope="row">Point of Contact</td>
             <td>
-            {{ $contact->first_name }}&nbsp;{{ $contact->last_name }}
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">Phone</td>
-            <td>
-                <a href="tel:+{{ $contact->phone }}" title="{{ $contact->phone }}">
-                {{ $contact->phone }}
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">Email</td>
-            <td>
-                <a href="mailto:{{ $contact->email }}" title="{{ $contact->email }}">
-                {{ $contact->email }}
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">Vehicle</td>
-            <td>
-                {{ $contact->vehicle_year . ' ' . $contact->vehicle_make . ' ' .
-                $contact->vehicle_model }}
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">Message</td>
-            <td>
-                {{ $contact->message }}
+            {{ $contact->contact_first_name }}&nbsp;{{ $contact->contact_last_name }}
             </td>
         </tr>
     </tbody>
 </table>
 
 <p class="lead text-muted">We will contact you soon in response to your request.
-Thanks for choosing C &amp; J Towing Services!</p>
+Thanks for choosing Devoted Transportation!</p>
