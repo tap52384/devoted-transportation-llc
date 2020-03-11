@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class State extends Model
 {
-    // public function contacts()
-    // {
-    //     return $this->hasMany('App\Contact');
-    // }
+    public function contacts()
+    {
+        return $this->belongsTo('App\Contact');
+    }
 }

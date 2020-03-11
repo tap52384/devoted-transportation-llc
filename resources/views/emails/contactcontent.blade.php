@@ -48,7 +48,7 @@
             <td>
                 {{ $contact->pickup_address_1 }}<br />
                 @if($contact->pickup_address_2 !== null){{ $contact->pickup_address_2 }}<br />@endif
-                {{ $contact->pickup_city . ', ' . $contact->pickup_state . ' ' .
+                {{ $contact->pickup_city . ', ' . $contact->pickupState()->first()->initial . ' ' .
                 $contact->pickup_zip }}
             </td>
         </tr>
@@ -64,7 +64,7 @@
             <td>
                 {{ $contact->return_address_1 }}<br />
                 @if($contact->return_address_2 !== null){{ $contact->return_address_2 }}<br />@endif
-                {{ $contact->return_city . ', ' . $contact->return_state . ' ' .
+                {{ $contact->return_city . ', ' . $contact->returnState()->first()->initial . ' ' .
                 $contact->return_zip }}
             </td>
         </tr>

@@ -34,7 +34,11 @@ class Contact extends Model
         $this->setDateAttribute('return_date', $value);
     }
 
-    public function state() {
-        return $this->hasOne('App\State');
+    public function pickupState() {
+        return $this->hasOne('App\State', 'id', 'pickup_state');
+    }
+
+    public function returnState() {
+        return $this->hasOne('App\State', 'id', 'return_state');
     }
 }
