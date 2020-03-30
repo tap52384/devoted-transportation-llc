@@ -21,7 +21,7 @@
     // "$app_folder" \
     // tap52384/ubi8-php-73:latest \
     // tap52384:devoted
-    "image": "tap52384:devoted",
+    "image": "tap52384:s2i",
 
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	//"dockerFile": "Dockerfile",

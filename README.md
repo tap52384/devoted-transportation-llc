@@ -22,7 +22,7 @@ Colors:
 ```bash
 mkdir -p ~/code
 cd ~/code
-docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384/ubi8-php-73:latest
+docker pull tap52384/ubi8-php-73:latest
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
 app_folder=~/code/devoted-transportation-llc/
 touch "$app_folder".env
@@ -31,7 +31,7 @@ s2i build \
 --environment-file "$app_folder"/.env \
 "$app_folder" \
 tap52384/ubi8-php-73:latest \
-tap52384:devoted
+tap52384:s2i
 
 # Stop and delete any containers based on the RedHat image
 docker rm -f $(docker ps -aq --filter ancestor=registry.access.redhat.com/ubi8/php-73 --format="{{.ID}}") || true
