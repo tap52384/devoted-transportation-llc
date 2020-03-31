@@ -77,7 +77,7 @@ docker exec -it devoted bash -c 'cp -fv $HOME/.env.example $HOME/.env && php art
 # Uses the "master" branch for building the image
 mkdir -p ~/code
 cd ~/code
-docker build --pull https://github.com/tap52384/ubi8-php-73.git -t tap52384/ubi8-php-73:latest
+docker pull tap52384/ubi8-php-73:latest
 
 # Clone the code
 git clone -q https://github.com/tap52384/devoted-transportation-llc.git
